@@ -1,0 +1,116 @@
+:root {
+  
+  /* =========================
+     LIGHT MODE
+  ========================= */
+  
+  --color-background: #f5f7fa;
+  
+  --color-surface: rgba(255, 255, 255, 0.72);
+  
+  --color-card: #ffffff;
+  
+  --color-text: #0f172a;
+  
+  --color-text-secondary: #64748b;
+  
+  --color-primary: #2563eb;
+  
+  --color-border: rgba(15, 23, 42, 0.08);
+  
+  --color-hover: rgba(15, 23, 42, 0.04);
+  
+  --title-gradient:
+linear-gradient(
+  180deg,
+  #0f172a 0%,
+  #334155 50%,
+  #64748b 100%
+);
+  
+  /* =========================
+     TYPOGRAPHY
+  ========================= */
+  
+  --font-family: 'Inter', sans-serif;
+  
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  
+  --font-size-hero: 64px;
+  
+  /* =========================
+     FONT WEIGHT
+  ========================= */
+  
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+  
+  /* =========================
+     SPACING
+  ========================= */
+  
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+  
+  /* =========================
+     RADIUS
+  ========================= */
+  
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  
+  /* =========================
+     TRANSITION
+  ========================= */
+  
+  --transition: all 0.2s ease;
+  
+}
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark-mode {
+  
+  --color-background: #0b1120;
+  
+  --color-surface: rgba(15, 23, 42, 0.72);
+  
+  --color-card: #111827;
+  
+  --color-text: #f8fafc;
+  
+  --color-text-secondary: #94a3b8;
+  
+  --color-primary: #3b82f6;
+  
+  --color-border: rgba(255, 255, 255, 0.08);
+  
+  --color-hover: rgba(255, 255, 255, 0.05);
+  
+  --title-gradient:
+linear-gradient(
+  180deg,
+  #ffffff 0%,
+  #d6dbe4 45%,
+  #94a3b8 100%
+);
+  
+}

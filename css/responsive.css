@@ -1,0 +1,132 @@
+/* =========================
+   LAPTOP
+========================= */
+
+@media (max-width: 1024px) {
+  
+  .hero-title {
+    font-size: 52px;
+  }
+  
+  .hero-container {
+    gap: 48px;
+  }
+  
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+  
+  .navbar {
+    padding: 0 18px;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+  
+  .hero {
+    padding-top: 80px;
+  }
+  
+  .hero-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-content {
+    order: 2;
+    
+    text-align: center;
+    
+    margin: 0 auto;
+  }
+  
+  .hero-image {
+    order: 1;
+  }
+  
+  .hero-buttons {
+    justify-content: center;
+  }
+  
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 640px) {
+  
+  .header {
+    padding-top: 16px;
+  }
+  
+  .navbar {
+    height: 64px;
+  }
+  
+  .nav-actions {
+    gap: 8px;
+  }
+  
+  .theme-toggle,
+  .language-btn,
+  .contact-btn {
+    height: 38px;
+    
+    padding: 0 12px;
+  }
+  
+  .hero {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+  
+  .hero-title {
+    font-size: 40px;
+    
+    letter-spacing: -1px;
+  }
+  
+  .hero-description {
+    font-size: 16px;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+  }
+  
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+  }
+  
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .modal-content {
+    padding: 24px;
+  }
+  
+}
+
+@media (max-width: 768px) {
+  
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+}
