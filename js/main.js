@@ -151,7 +151,7 @@ async function typeCode(containerId) {
       if (char === '\n') {
         addLineNumber(); // New line number appears ONLY after a \n
       }
-      await new Promise(r => setTimeout(r, 15));
+      await new Promise(r => setTimeout(r, 200));
     }
   }
 }
@@ -184,7 +184,7 @@ async function typeTerminal(containerId) {
 
     for (const char of line.text) {
       textSpan.textContent += char;
-      await new Promise(r => setTimeout(r, 20));
+      await new Promise(r => setTimeout(r, 70));
     }
     
     termCursor.remove();
@@ -208,7 +208,7 @@ async function animateDots(containerId) {
   
   for (let i = 0; i < dots.length; i++) {
     dots[i].classList.add('visible');
-    await new Promise(r => setTimeout(r, 40)); 
+    await new Promise(r => setTimeout(r, 15)); 
   }
 }
 
