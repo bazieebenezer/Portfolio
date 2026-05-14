@@ -22,7 +22,9 @@
 
   --color-secondary: #10b981;
   
-  --color-code-string: #FFF9A5;
+  --color-code-string: #EC9A29;
+  
+  
   
   --title-gradient:
 linear-gradient(
@@ -110,7 +112,7 @@ body.dark-mode {
   
   --color-hover: rgba(255, 255, 255, 0.05);
   
-  --color-code-string: #EC9A29;
+  --color-code-string: #FFF9A5;
   
   --title-gradient:
 linear-gradient(
