@@ -831,7 +831,7 @@ body.dark-mode .glow-3 {
 .hero-visual {
   position: relative;
   width: 100%;
-  height: 600px;
+  height: max-content;
   display: flex;
   align-items: center;
   justify-content: center;
