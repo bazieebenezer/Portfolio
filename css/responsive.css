@@ -30,23 +30,25 @@
   }
   
   .hero {
-    padding-top: 80px;
+    padding-top: 140px; /* Increased from 110px */
   }
   
   .hero-container {
     grid-template-columns: 1fr;
+    gap: 48px;
   }
   
   .hero-content {
     order: 2;
-    
     text-align: center;
-    
     margin: 0 auto;
+    margin-top: 40px; /* Space between dashboard and text */
   }
   
-  .hero-image {
-    order: 1;
+  .hero-visual {
+    order: 1; /* Dashboard first on mobile for impact */
+    height: auto;
+    min-height: 400px;
   }
   
   .hero-buttons {
@@ -83,12 +85,11 @@
   .language-btn,
   .contact-btn {
     height: 38px;
-    
     padding: 0 12px;
   }
   
   .hero {
-    padding-top: 64px;
+    padding-top: 130px; /* Increased from 100px */
     padding-bottom: 64px;
   }
   
