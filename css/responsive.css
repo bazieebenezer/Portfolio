@@ -1,65 +1,88 @@
 /* =========================
-   LAPTOP
+   LAPTOP & TABLET (Large)
 ========================= */
 
 @media (max-width: 1024px) {
-  
   .hero-title {
-    font-size: 52px;
+    font-size: 48px;
   }
   
   .hero-container {
-    gap: 48px;
+    gap: 32px;
   }
-  
+
+  .dashboard-window {
+    width: 480px;
+  }
 }
 
 
 /* =========================
-   TABLET
+   TABLET (Small)
 ========================= */
 
 @media (max-width: 768px) {
-  
+  .header {
+    padding-top: 12px;
+  }
+
   .navbar {
-    padding: 0 18px;
+    height: 64px;
+    padding: 0 16px;
+    width: 92%; /* Slightly tighter on tablet */
   }
   
   .nav-links {
     display: none;
   }
+
+  .logo span {
+    display: none; /* Hide "Simplix" text to save space */
+  }
+
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   
   .hero {
-    padding-top: 140px; /* Increased from 110px */
+    padding-top: 120px;
+    padding-bottom: 60px;
   }
   
   .hero-container {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 40px;
+    text-align: center;
   }
   
   .hero-content {
     order: 2;
-    text-align: center;
     margin: 0 auto;
-    margin-top: 40px; /* Space between dashboard and text */
   }
-  
+
   .hero-visual {
-    order: 1; /* Dashboard first on mobile for impact */
+    order: 1;
     height: auto;
-    min-height: 400px;
+    min-height: 350px;
   }
-  
+
+  .dashboard-window {
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  .dashboard-widgets {
+    grid-template-columns: 1fr;
+    height: auto;
+    gap: 12px;
+  }
+
   .hero-buttons {
     justify-content: center;
   }
-  
-  .hero-description {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
 }
 
 
@@ -67,67 +90,81 @@
    MOBILE
 ========================= */
 
-@media (max-width: 640px) {
-  
+@media (max-width: 480px) {
   .header {
-    padding-top: 16px;
+    padding-top: 8px;
   }
-  
+
   .navbar {
-    height: 64px;
-  }
-  
-  .nav-actions {
-    gap: 8px;
-  }
-  
-  .theme-toggle,
-  .language-btn,
-  .contact-btn {
-    height: 38px;
+    height: 58px;
     padding: 0 12px;
+    border-radius: 12px;
+    width: 94%;
   }
-  
+
+  .nav-actions {
+    gap: 4px;
+  }
+
+  .theme-toggle, 
+  .language-btn, 
+  .contact-btn {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+  }
+
   .hero {
-    padding-top: 130px; /* Increased from 100px */
-    padding-bottom: 64px;
+    padding-top: 90px;
   }
-  
+
+  .hero-badge {
+    font-size: 12px;
+    height: 30px;
+    margin-bottom: 16px;
+  }
+
   .hero-title {
-    font-size: 40px;
-    
+    font-size: 30px;
     letter-spacing: -1px;
+    line-height: 1.1;
+    margin-bottom: 16px;
   }
-  
+
   .hero-description {
-    font-size: 16px;
+    font-size: 14px;
+    margin-bottom: 24px;
   }
-  
+
   .hero-buttons {
     flex-direction: column;
+    width: 100%;
+    gap: 10px;
   }
-  
-  .primary-btn,
+
+  .primary-btn, 
   .secondary-btn {
     width: 100%;
+    height: 46px;
+    font-size: 14px;
   }
-  
-  .form-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .modal-content {
-    padding: 24px;
-  }
-  
-}
 
-@media (max-width: 768px) {
-  
-  .menu-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .window-content {
+    height: auto;
+    padding: 12px;
   }
-  
+
+  .code-editor {
+    font-size: 11px;
+    gap: 8px;
+  }
+
+  .line-numbers {
+    min-width: 20px;
+  }
+
+  .dashboard-widgets {
+    padding: 12px;
+    height: auto;
+  }
 }
