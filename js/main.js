@@ -98,7 +98,7 @@ const codeContent = [
   { text: ';\n  stack ', type: 'property' },
   { text: '= ', type: 'plain' },
   { text: '["Design", "Dev", "UI"]', type: 'string' },
-  { text: ';\n  ', type: 'plain' },
+  { text: ';\n\n  ', type: 'plain' },
   { text: 'build', type: 'method' },
   { text: '() {\n    ', type: 'plain' },
   { text: 'return ', type: 'keyword' },
@@ -112,103 +112,92 @@ const terminalLines = [
   { prompt: false, text: '✔ Project Live' }
 ];
 
+let lineCount = 0;
+
+function addLineNumber() {
+  const lineNumbers = document.getElementById('line-numbers');
+  if (!lineNumbers) return;
+  
+  lineCount++;
+  const span = document.createElement('span');
+  span.textContent = lineCount < 10 ? `0${lineCount}` : lineCount;
+  lineNumbers.appendChild(span);
+}
+
 async function typeCode(containerId) {
+  const container = document.getElementById(containerId);
+  const lineNumbers = document.getElementById('line-numbers');
+  if (!container || !lineNumbers) return;
+
+  container.innerHTML = '';
+  lineNumbers.innerHTML = '';
+  lineCount = 0;
+
+  addLineNumber(); // First line number starts immediately
+
+  const cursor = document.createElement('span');
+  cursor.className = 'cursor';
+  container.appendChild(cursor);
+
+  for (const part of codeContent) {
+    const span = document.createElement('span');
+    if (part.type !== 'plain') {
+      span.className = `token-${part.type}`;
+    }
+    container.insertBefore(span, cursor);
+
+    for (const char of part.text) {
+      span.textContent += char;
+      if (char === '\n') {
+        addLineNumber(); // New line number appears ONLY after a \n
+      }
+      await new Promise(r => setTimeout(r, 15));
+    }
+  }
+}
+
+async function typeTerminal(containerId) {
   const container = document.getElementById(containerId);
   if (!container) return;
 
   container.innerHTML = '';
 
-  const cursor = document.createElement('span');
-  cursor.className = 'cursor';
-
-  for (const part of codeContent) {
-
-    const span = document.createElement('span');
-
-    if (part.type !== 'plain') {
-      span.className = `token-${part.type}`;
-    }
-
-    container.appendChild(span);
-    container.appendChild(cursor);
-
-    for (const char of part.text) {
-
-      span.textContent += char;
-
-      await new Promise(resolve =>
-        setTimeout(resolve, 70)
-      );
-    }
-  }
-
-  for (const char of part.text) {
-
-  span.textContent += char;
-
-  updateLineNumbers();
-
-  await new Promise(resolve =>
-    setTimeout(resolve, 70)
-  );
-}
-}
-
-async function typeTerminal(containerId) {
-
-  const container = document.getElementById(containerId);
-  if (!container) return;
-
-  let activeCursor = null;
-
   for (const line of terminalLines) {
-
     const lineDiv = document.createElement('div');
     lineDiv.className = 'terminal-line';
-
-    // Prompt
+    
     if (line.prompt) {
-
       const promptSpan = document.createElement('span');
       promptSpan.className = 'prompt';
       promptSpan.textContent = '$ ';
-
       lineDiv.appendChild(promptSpan);
     }
 
-    // Texte
     const textSpan = document.createElement('span');
     lineDiv.appendChild(textSpan);
-
-    // Supprime l'ancien curseur
-    if (activeCursor) {
-      activeCursor.remove();
-    }
-
-    // Nouveau curseur
-    const cursor = document.createElement('span');
-    cursor.className = 'cursor terminal-cursor';
-
-    lineDiv.appendChild(cursor);
-
-    activeCursor = cursor;
-
+    
+    const termCursor = document.createElement('span');
+    termCursor.className = 'cursor terminal-cursor';
+    lineDiv.appendChild(termCursor);
+    
     container.appendChild(lineDiv);
 
-    // Animation écriture
     for (const char of line.text) {
-
       textSpan.textContent += char;
-
-      await new Promise(resolve =>
-        setTimeout(resolve, 20)
-      );
+      await new Promise(r => setTimeout(r, 20));
     }
-
-    await new Promise(resolve =>
-      setTimeout(resolve, 250)
-    );
+    
+    termCursor.remove();
+    await new Promise(r => setTimeout(r, 200));
   }
+  
+  // Final persistent cursor
+  const lastLine = document.createElement('div');
+  lastLine.className = 'terminal-line';
+  const finalCursor = document.createElement('span');
+  finalCursor.className = 'cursor terminal-cursor';
+  lastLine.appendChild(finalCursor);
+  container.appendChild(lastLine);
 }
 
 async function animateDots(containerId) {
@@ -227,34 +216,3 @@ window.addEventListener('load', () => {
   typeTerminal('typing-terminal');
   animateDots('activity-dots');
 });
-
-function updateLineNumbers() {
-
-  const codeBlock = document.getElementById('typing-code');
-  const lineNumbers = document.getElementById('line-numbers');
-
-  if (!codeBlock || !lineNumbers) return;
-
-  // Récupère le line-height réel
-  const styles = window.getComputedStyle(codeBlock);
-
-  const lineHeight = parseFloat(styles.lineHeight);
-
-  // Nombre réel de lignes affichées
-  const linesCount = Math.round(
-    codeBlock.offsetHeight / lineHeight
-  );
-
-  lineNumbers.innerHTML = '';
-
-  for (let i = 1; i <= linesCount; i++) {
-
-    const line = document.createElement('span');
-
-    line.textContent = i;
-
-    lineNumbers.appendChild(line);
-  }
-}
-
-window.addEventListener('resize', updateLineNumbers);
