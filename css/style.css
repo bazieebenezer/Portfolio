@@ -923,7 +923,7 @@ body.dark-mode .glow-3 {
 .token-keyword { color: var(--color-primary); font-weight: 600; }
 .token-class { color: #10b981; }
 .token-property { color: var(--color-text-secondary); }
-.token-string { color: #FCE762; }
+.token-string { color: #FE5D26; }
 .token-method { color: #8b5cf6; }
 
 /* Dashboard Widgets */
