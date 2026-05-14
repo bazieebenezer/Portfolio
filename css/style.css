@@ -753,14 +753,14 @@ body.dark-mode .hero::after {
   position: absolute;
   border-radius: 50%;
   filter: blur(100px);
-  opacity: 0.05;
+  opacity: 0.12;
   transition: opacity 0.5s ease;
 }
 
 body.dark-mode .glow-1, 
 body.dark-mode .glow-2, 
 body.dark-mode .glow-3 {
-  opacity: 0.05;
+  opacity: 0.15;
 }
 
 .glow-1 {
