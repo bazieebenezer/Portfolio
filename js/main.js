@@ -191,13 +191,14 @@ async function typeTerminal(containerId) {
     await new Promise(r => setTimeout(r, 200));
   }
   
-  // Final persistent cursor
-  const lastLine = document.createElement('div');
-  lastLine.className = 'terminal-line';
-  const finalCursor = document.createElement('span');
-  finalCursor.className = 'cursor terminal-cursor';
-  lastLine.appendChild(finalCursor);
-  container.appendChild(lastLine);
+  // Final persistent cursor on the LAST written line
+  const lines = container.querySelectorAll('.terminal-line');
+  if (lines.length > 0) {
+    const lastLine = lines[lines.length - 1];
+    const finalCursor = document.createElement('span');
+    finalCursor.className = 'cursor terminal-cursor';
+    lastLine.appendChild(finalCursor);
+  }
 }
 
 async function animateDots(containerId) {
