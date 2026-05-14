@@ -102,7 +102,7 @@ const codeContent = [
   { text: 'build', type: 'method' },
   { text: '() {\n    ', type: 'plain' },
   { text: 'return ', type: 'keyword' },
-  { text: '"Interfaces modernes & Intuitives"', type: 'string' },
+  { text: '"Interfaces modernes"', type: 'string' },
   { text: ';\n  }\n}', type: 'plain' }
 ];
 
