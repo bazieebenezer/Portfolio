@@ -166,7 +166,7 @@ h3 {
 
   border: 1px solid var(--color-border);
 
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-sm);
 
   background: var(--color-surface);
 
@@ -230,9 +230,9 @@ h3 {
 .theme-toggle,
 .language-btn,
 .contact-btn {
-  height: 42px;
+  height: 44px;
 
-  padding: 0 16px;
+  padding: 12px;
 
   border: 1px solid var(--color-border);
 
@@ -280,14 +280,19 @@ h3 {
 .menu-toggle {
   display: none;
   
-  width: 42px;
-  height: 42px;
+  height: 44px;
+
+padding: 12px;
   
   border: 1px solid var(--color-border);
   
   border-radius: var(--radius-sm);
   
   cursor: pointer;
+  
+  color: var(--text-color-primary);
+  
+  margin-left: var(--space-sm);
 }
 
 
@@ -748,14 +753,14 @@ body.dark-mode .hero::after {
   position: absolute;
   border-radius: 50%;
   filter: blur(100px);
-  opacity: 0.15;
+  opacity: 0.05;
   transition: opacity 0.5s ease;
 }
 
 body.dark-mode .glow-1, 
 body.dark-mode .glow-2, 
 body.dark-mode .glow-3 {
-  opacity: 0.25;
+  opacity: 0.05;
 }
 
 .glow-1 {
@@ -838,7 +843,7 @@ body.dark-mode .glow-3 {
   background: var(--color-surface);
   backdrop-filter: blur(20px);
   border: 1px solid var(--color-border);
-  border-radius: 20px;
+  border-radius: var(--radius-sm);
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   z-index: 5;
@@ -933,12 +938,12 @@ body.dark-mode .glow-3 {
 .widget {
   background: rgba(15, 23, 42, 0.02);
   border: 1px solid var(--color-border);
-  border-radius: 12px;
+  border-radius: var(--radius-sm);
   padding: 12px;
   height: 100%;
 }
 
-.widget-label {
+.widget-label, .terminal-title {
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -948,14 +953,15 @@ body.dark-mode .glow-3 {
 }
 
 .activity-widget {
-  height: 100px;
+  height: max-content;
+  
 }
 
 .activity-dots {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 3px;
 }
 
 .activity-dots span {
@@ -974,19 +980,13 @@ body.dark-mode .glow-3 {
 .terminal-widget {
   background: #0f172a;
   color: #f8fafc;
-  height: 100px;
+  height: max-content;
   overflow: hidden;
-}
-
-.terminal-title {
-  font-size: 10px;
-  opacity: 0.5;
-  margin-bottom: 4px;
 }
 
 .terminal-body {
   font-family: 'Cascadia Code', monospace;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .terminal-line {
@@ -1026,13 +1026,4 @@ body.dark-mode .glow-3 {
   filter: blur(80px);
   opacity: 0.1;
   z-index: 1;
-}
-
-@media (max-width: 992px) {
-  .dashboard-window { width: 100%; max-width: 460px; }
-}
-
-@media (max-width: 768px) {
-  .hero-visual { height: 400px; }
-  .dashboard-widgets { grid-template-columns: 1fr; }
 }
