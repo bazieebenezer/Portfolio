@@ -1,0 +1,19 @@
+{
+  "fr": {
+    "home": "Accueil",
+    "about": "À propos",
+    "experience": "Expérience",
+    "formation": "Formation",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  
+  "en": {
+    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "formation": "Education",
+    "projects": "Projects",
+    "contact": "Contact"
+  }
+}

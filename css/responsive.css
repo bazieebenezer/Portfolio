@@ -1,0 +1,265 @@
+/* =========================
+   LAPTOP & TABLET (Large)
+========================= */
+
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 48px;
+  }
+
+  .hero-container {
+    gap: 32px;
+  }
+
+  .dashboard-window {
+    width: 300px;
+  }
+}
+
+
+/* =========================
+   TABLET (Small)
+========================= */
+
+@media (max-width: 992px) {
+
+  .about-container {
+    grid-template-columns: 1fr;
+    /* gap: 60px; */
+  }
+
+  .about-heading {
+    position: relative;
+    top: 0;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-card-large,
+  .about-stack-card {
+    min-height: auto;
+  }
+
+  .experience-item {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .experience-date {
+    position: relative;
+    top: 0;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .header {
+    padding-top: 12px;
+  }
+
+  .navbar {
+    height: 64px;
+    padding: 0 16px;
+    width: 92%;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero {
+    padding-top: 120px;
+    padding-bottom: 60px;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .hero-content {
+    order: 2;
+    margin: 0 auto;
+  }
+
+  .hero-visual {
+    order: 1;
+    height: auto;
+    min-height: 350px;
+  }
+
+  .dashboard-window {
+    width: max-content;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  .dashboard-widgets {
+    grid-template-columns: 1fr;
+    height: auto;
+    gap: 12px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .about-section {
+    padding: 100px 0;
+  }
+
+  .about-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .about-title {
+    font-size: 48px;
+    letter-spacing: -2px;
+  }
+
+  .about-card {
+    padding: 24px;
+  }
+
+  .experience-section {
+    padding: 120px 0;
+  }
+
+  .experience-title {
+    font-size: 48px;
+    letter-spacing: -2px;
+  }
+
+  .experience-card {
+    padding: 28px;
+  }
+
+  .experience-card h3 {
+    font-size: 28px;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .header {
+    padding-top: 8px;
+  }
+
+  .navbar {
+    height: 58px;
+    padding: 0 12px;
+    border-radius: 12px;
+    width: 94%;
+  }
+
+  .nav-actions {
+    gap: 4px;
+  }
+
+  .hero {
+    padding-top: 90px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .hero-visual {
+    width: 380px;
+  }
+
+  .code-area {
+    text-align: left;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+  }
+
+  .window-content {
+    height: auto;
+    padding: 12px;
+  }
+
+  .code-editor {
+    gap: 8px;
+  }
+
+  .line-numbers {
+    min-width: 20px;
+  }
+
+  .dashboard-widgets {
+    padding: 12px;
+    height: auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+
+  .education-timeline::before {
+    display: none;
+  }
+
+  .education-item {
+
+    grid-template-columns:
+      1fr;
+
+    gap: 20px;
+  }
+
+  .education-line {
+    display: none;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .education-section {
+    padding: 120px 0;
+  }
+
+  .education-header {
+    margin-bottom: 80px;
+  }
+
+  .education-title {
+
+    font-size: 52px;
+
+    letter-spacing: -2px;
+  }
+
+  .education-content {
+    padding: 28px;
+  }
+
+  .education-content h3 {
+    font-size: 30px;
+  }
+
+}
