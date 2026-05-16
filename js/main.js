@@ -1,3 +1,13 @@
+document.addEventListener("DOMContentLoaded", function() {
+    const video = document.querySelector('.video-container video');
+    if (video) {
+        video.play().catch(error => {
+            console.log("Le démarrage automatique a été bloqué par le navigateur, l'utilisateur doit interagir avec la page.", error);
+        });
+    }
+});
+
+
 /* =========================
    MODAL
 ========================= */
@@ -217,3 +227,54 @@ window.addEventListener('load', () => {
   typeTerminal('typing-terminal');
   animateDots('activity-dots');
 });
+
+/* =========================
+   FAQ ACCORDION
+========================= */
+
+const faqItems =
+  document.querySelectorAll(".faq-item");
+
+faqItems.forEach((item) => {
+  
+  const question =
+    item.querySelector(".faq-question");
+  
+  question.addEventListener("click", () => {
+    
+    const isActive =
+      item.classList.contains("active");
+    
+    faqItems.forEach((faq) => {
+      faq.classList.remove("active");
+    });
+    
+    if (!isActive) {
+      item.classList.add("active");
+    }
+    
+  });
+  
+});
+
+/* =========================
+   FINAL CTA BUTTON
+========================= */
+
+const finalCTAButton =
+  document.querySelector(
+    ".final-cta-button"
+  );
+
+if (finalCTAButton) {
+  
+  finalCTAButton.addEventListener(
+    "click",
+    () => {
+      
+      contactModal.classList.add("active");
+      
+    }
+  );
+  
+}
