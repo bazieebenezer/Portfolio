@@ -11,6 +11,7 @@
     gap: 32px;
   }
 
+  /* Preserve Dashboard UI */
   .dashboard-window {
     width: 300px;
   }
@@ -25,7 +26,6 @@
 
   .about-container {
     grid-template-columns: 1fr;
-    /* gap: 60px; */
   }
 
   .about-heading {
@@ -51,10 +51,90 @@
     position: relative;
     top: 0;
   }
+
+  .education-timeline::before {
+    display: none;
+  }
+
+  .education-item {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .education-line {
+    display: none;
+  }
+
+  .final-cta-container {
+    padding: 80px 48px;
+  }
 }
 
 
 @media (max-width: 768px) {
+  /* FONT SIZES */
+  .hero-title {
+    font-size: 42px;
+  }
+
+  .about-title,
+  .experience-title,
+  .projects-title,
+  .education-title,
+  .faq-title,
+  .final-cta-title {
+    font-size: 42px;
+    letter-spacing: -2px;
+  }
+
+  .about-text,
+  .experience-description,
+  .project-text p,
+  .education-content p,
+  .faq-description,
+  .final-cta-description {
+    font-size: 16px;
+  }
+
+  /* BUTTONS & ACTIONS */
+  .primary-btn,
+  .secondary-btn,
+  .submit-btn,
+  .contact-btn,
+  .final-cta-button {
+    height: 48px;
+    padding: 0 18px;
+    font-size: 14px;
+  }
+
+  .final-cta-button {
+    width: 100%;
+  }
+
+  .theme-toggle,
+  .language-btn,
+  .contact-btn,
+  .menu-toggle,
+  .project-arrow {
+    height: 40px;
+    padding: 10px;
+  }
+
+  .project-arrow {
+    width: 40px;
+  }
+
+  .theme-toggle i,
+  .language-btn i,
+  .contact-btn i,
+  .menu-toggle i,
+  .project-arrow i,
+  .final-cta-button i {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* LAYOUT */
   .header {
     padding-top: 12px;
   }
@@ -62,6 +142,10 @@
   .navbar {
     height: 64px;
     padding: 0 16px;
+    width: 92%;
+  }
+
+  .container {
     width: 92%;
   }
 
@@ -91,14 +175,99 @@
     margin: 0 auto;
   }
 
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  /* Sections Spacing */
+  .about-section,
+  .experience-section,
+  .projects-section,
+  .education-section,
+  .faq-section,
+  .final-cta-section {
+    padding: 80px 0;
+  }
+
+  .about-card {
+    padding: 24px;
+  }
+
+  .experience-card {
+    padding: 24px;
+  }
+
+  .experience-card h3 {
+    font-size: 26px;
+  }
+
+  .stack-tags span,
+  .experience-stack span,
+  .education-tags span {
+    height: 36px;
+    padding: 0 14px;
+    font-size: 13px;
+  }
+
+  .stack-tags img {
+    width: 14px;
+    height: 14px;
+  }
+
+  .education-header,
+  .experience-header,
+  .projects-header,
+  .faq-header {
+    margin-bottom: 48px;
+  }
+
+  .education-content {
+    padding: 24px;
+  }
+
+  .education-content h3 {
+    font-size: 26px;
+  }
+
+  .faq-question {
+    padding: 20px;
+  }
+
+  .faq-question span {
+    font-size: 16px;
+  }
+
+  .faq-answer p {
+    padding: 0 20px 20px 20px;
+    font-size: 15px;
+  }
+
+  .final-cta-container {
+    padding: 48px var(--space-lg);
+    border-radius: var(--radius-lg);
+  }
+
+  .final-cta-links {
+    flex-direction: column;
+    align-items: start;
+    gap: 12px;
+  }
+
+  .final-cta-links a {
+    width: 100%;
+  }
+
+  /* Preserve Dashboard UI in Hero but allow it to stack */
   .hero-visual {
     order: 1;
     height: auto;
-    min-height: 350px;
+    min-height: 300px;
+    width: 100%;
+    overflow: hidden;
   }
 
   .dashboard-window {
-    width: max-content;
+    width: 100%;
     max-width: 440px;
     margin: 0 auto;
   }
@@ -108,44 +277,6 @@
     height: auto;
     gap: 12px;
   }
-
-  .hero-buttons {
-    justify-content: center;
-  }
-
-  .about-section {
-    padding: 100px 0;
-  }
-
-  .about-cards {
-    grid-template-columns: 1fr;
-  }
-
-  .about-title {
-    font-size: 48px;
-    letter-spacing: -2px;
-  }
-
-  .about-card {
-    padding: 24px;
-  }
-
-  .experience-section {
-    padding: 120px 0;
-  }
-
-  .experience-title {
-    font-size: 48px;
-    letter-spacing: -2px;
-  }
-
-  .experience-card {
-    padding: 28px;
-  }
-
-  .experience-card h3 {
-    font-size: 28px;
-  }
 }
 
 
@@ -154,14 +285,102 @@
 ========================= */
 
 @media (max-width: 480px) {
+  /* FONT SIZES */
+  .hero-title {
+    font-size: 34px;
+    letter-spacing: -1.5px;
+  }
+
+  .about-title,
+  .experience-title,
+  .projects-title,
+  .education-title,
+  .faq-title,
+  .final-cta-title {
+    font-size: 32px;
+    letter-spacing: -1.5px;
+  }
+
+  .section-badge {
+    height: 30px;
+    padding: 0 12px;
+    font-size: 12px;
+  }
+
+  .hero-description {
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+
+  .stack-tags span,
+  .experience-stack span,
+  .education-tags span {
+    height: 32px;
+    padding: 0 12px;
+    font-size: 12px;
+  }
+
+  .stack-tags img {
+    width: 12px;
+    height: 12px;
+  }
+
+  /* BUTTONS & ICONS */
+  .primary-btn,
+  .secondary-btn,
+  .submit-btn,
+  .contact-btn,
+  .final-cta-button {
+    height: 46px;
+    padding: 0 16px;
+    font-size: 13px;
+    width: 100%;
+  }
+
+  .theme-toggle,
+  .language-btn,
+  .contact-btn,
+  .menu-toggle,
+  .project-arrow {
+    height: 38px;
+    padding: 8px;
+  }
+
+  .project-arrow {
+    width: 38px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .primary-btn svg,
+  .secondary-btn svg,
+  .theme-toggle i,
+  .language-btn i,
+  .contact-btn i,
+  .menu-toggle i,
+  .project-arrow i,
+  .final-cta-button i {
+    width: 15px;
+    height: 15px;
+  }
+
+  /* LAYOUT */
   .header {
     padding-top: 8px;
   }
 
   .navbar {
-    height: 58px;
+    height: 56px;
     padding: 0 12px;
     border-radius: 12px;
+    width: 94%;
+  }
+
+  .container {
     width: 94%;
   }
 
@@ -173,28 +392,16 @@
     padding-top: 90px;
   }
 
-  .hero-description {
-    font-size: 16px;
-    margin-bottom: 24px;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    width: 100%;
-    gap: 10px;
-  }
-
+  /* Preserve Dashboard UI */
   .hero-visual {
-    width: 380px;
-  }
-
-  .code-area {
-    text-align: left;
-  }
-
-  .primary-btn,
-  .secondary-btn {
     width: 100%;
+    min-height: auto;
+    overflow-x: hidden;
+  }
+
+  .dashboard-window {
+    width: 100%;
+    max-width: 100%;
   }
 
   .window-content {
@@ -203,137 +410,15 @@
   }
 
   .code-editor {
+    font-size: 11px;
     gap: 8px;
   }
 
   .line-numbers {
-    min-width: 20px;
+    min-width: 15px;
   }
 
   .dashboard-widgets {
     padding: 12px;
-    height: auto;
-    width: 100%;
   }
-}
-
-@media (max-width: 992px) {
-
-  .education-timeline::before {
-    display: none;
-  }
-
-  .education-item {
-
-    grid-template-columns:
-      1fr;
-
-    gap: 20px;
-  }
-
-  .education-line {
-    display: none;
-  }
-
-}
-
-@media (max-width: 768px) {
-
-  .education-section {
-    padding: 120px 0;
-  }
-
-  .education-header {
-    margin-bottom: 80px;
-  }
-
-  .education-title {
-
-    font-size: 52px;
-
-    letter-spacing: -2px;
-  }
-
-  .education-content {
-    padding: 28px;
-  }
-
-  .education-content h3 {
-    font-size: 30px;
-  }
-
-}
-
-@media (max-width: 768px) {
-  
-  .faq-section {
-    padding: 120px 0;
-  }
-  
-  .faq-title {
-    font-size: 52px;
-    
-    letter-spacing: -2px;
-  }
-  
-  .faq-question {
-    padding: 24px;
-  }
-  
-  .faq-question span {
-    font-size: 18px;
-  }
-  
-  .faq-answer p {
-    padding:
-      0 24px 24px 24px;
-    
-    font-size: 16px;
-  }
-  
-}
-
-@media (max-width: 992px) {
-  
-  .final-cta-container {
-    padding:
-      80px 48px;
-  }
-  
-}
-
-@media (max-width: 768px) {
-  
-  .final-cta-section {
-    padding:
-      120px 0 80px;
-  }
-  
-  .final-cta-container {
-    padding:
-      56px var(--space-lg);
-    
-    border-radius: var(--radius-lg);
-  }
-  
-  .final-cta-title {
-    
-    font-size: 48px;
-    
-    letter-spacing: -3px;
-  }
-  
-  .final-cta-description {
-    font-size: 17px;
-  }
-  
-  .final-cta-links {
-    flex-direction: column;
-    align-items: start;
-  }
-  
-  .final-cta-links a {
-    width: 100%;
-  }
-  
 }
