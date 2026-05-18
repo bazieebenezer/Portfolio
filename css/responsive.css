@@ -83,7 +83,7 @@
   .hero-container {
     grid-template-columns: 1fr;
     gap: 40px;
-    text-align: center;
+    text-align: left;
   }
 
   .hero-content {
@@ -262,4 +262,78 @@
     font-size: 30px;
   }
 
+}
+
+@media (max-width: 768px) {
+  
+  .faq-section {
+    padding: 120px 0;
+  }
+  
+  .faq-title {
+    font-size: 52px;
+    
+    letter-spacing: -2px;
+  }
+  
+  .faq-question {
+    padding: 24px;
+  }
+  
+  .faq-question span {
+    font-size: 18px;
+  }
+  
+  .faq-answer p {
+    padding:
+      0 24px 24px 24px;
+    
+    font-size: 16px;
+  }
+  
+}
+
+@media (max-width: 992px) {
+  
+  .final-cta-container {
+    padding:
+      80px 48px;
+  }
+  
+}
+
+@media (max-width: 768px) {
+  
+  .final-cta-section {
+    padding:
+      120px 0 80px;
+  }
+  
+  .final-cta-container {
+    padding:
+      56px var(--space-lg);
+    
+    border-radius: var(--radius-lg);
+  }
+  
+  .final-cta-title {
+    
+    font-size: 48px;
+    
+    letter-spacing: -3px;
+  }
+  
+  .final-cta-description {
+    font-size: 17px;
+  }
+  
+  .final-cta-links {
+    flex-direction: column;
+    align-items: start;
+  }
+  
+  .final-cta-links a {
+    width: 100%;
+  }
+  
 }
