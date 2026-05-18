@@ -2272,13 +2272,17 @@ body.dark-mode .border-beam::before {
   font-weight: 500;
   
   letter-spacing: -0.5px;
+  
+  color: var(--color-primary);
 }
 
-.faq-question i {
+.faq-question i,
+.faq-question svg {
   width: 22px;
   height: 22px;
   
-  color: var(--color-text-secondary);
+  color: var(--color-primary);
+  stroke: var(--color-primary);
   
   transition:
     transform 0.4s ease;
