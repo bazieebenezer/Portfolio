@@ -274,8 +274,12 @@
 
   .dashboard-widgets {
     grid-template-columns: 1fr;
-    height: auto;
+    height: 320px;
     gap: 12px;
+  }
+
+  .terminal-widget {
+    height: 120px;
   }
 }
 
@@ -405,7 +409,7 @@
   }
 
   .window-content {
-    height: auto;
+    height: 240px;
     padding: 12px;
   }
 
@@ -420,5 +424,10 @@
 
   .dashboard-widgets {
     padding: 12px;
+    height: 280px;
+  }
+
+  .terminal-widget {
+    height: 105px;
   }
 }
