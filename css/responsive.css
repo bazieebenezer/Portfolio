@@ -249,15 +249,11 @@
 
   .final-cta-links {
     flex-direction: column;
-    align-items: start;
-    gap: 12px;
-  }
+    .final-cta-links a {
+      width: 100%;
+    }
 
-  .final-cta-links a {
-    width: 100%;
-  }
-
-  /* Preserve Dashboard UI in Hero but allow it to stack */
+    /* Preserve Dashboard UI in Hero but allow it to stack */
   .hero-visual {
     order: 1;
     height: auto;
