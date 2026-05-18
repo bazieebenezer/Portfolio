@@ -922,10 +922,11 @@ body.dark-mode .glow-3 {
   content: "";
   position: absolute;
   aspect-ratio: 1;
-  width: 150px; /* Taille de la lumière */
-  background: linear-gradient(to right, transparent, var(--color-primary), transparent);
-  filter: blur(8px);
+  width: 100px; /* Taille un peu plus compacte pour la précision */
+  background: radial-gradient(circle at center, var(--color-primary) 0%, transparent 70%);
+  filter: blur(4px);
   offset-path: rect(0% 100% 100% 0% round var(--radius-sm));
+  offset-rotate: 0deg; /* Empêche le pivotement aux angles */
   animation: beam-move 6s linear infinite;
 }
 
@@ -936,7 +937,7 @@ body.dark-mode .glow-3 {
 }
 
 body.dark-mode .border-beam::before {
-  background: linear-gradient(to right, transparent, #6366f1, transparent); /* Un bleu/violet plus électrique en dark mode */
+  background: radial-gradient(circle at center, #6366f1 0%, transparent 70%);
 }
 
 .window-header {
