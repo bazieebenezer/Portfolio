@@ -414,8 +414,12 @@
   }
 
   .code-editor {
-    font-size: 11px;
+    font-size: 13px;
     gap: 8px;
+  }
+
+  .terminal-body {
+    font-size: 12px;
   }
 
   .line-numbers {

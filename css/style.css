@@ -999,7 +999,7 @@ body.dark-mode .border-beam::before {
   display: flex;
   gap: 12px;
   font-family: 'Cascadia Code', 'Fira Code', monospace;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.6;
   white-space: pre;
   overflow-x: auto;
