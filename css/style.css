@@ -461,6 +461,7 @@ h3 {
   justify-content: center;
   z-index: 2000;
   padding: 40px;
+  overflow-y: auto;
 }
 
 .contact-modal.active {
@@ -468,7 +469,7 @@ h3 {
 }
 
 .modal-backdrop {
-  position: absolute;
+  position: fixed; /* Changed from absolute to fixed to cover the whole scrollable area */
   inset: 0;
   background: rgba(15, 23, 42, 0.4);
   backdrop-filter: blur(20px);
@@ -483,6 +484,7 @@ body.dark-mode .modal-backdrop {
 .modal-content {
   position: relative;
   width: min(1160px, 100%);
+  margin: auto; /* Ensures centering with scroll */
   background: var(--color-surface);
   backdrop-filter: blur(40px);
   -webkit-backdrop-filter: blur(40px);
