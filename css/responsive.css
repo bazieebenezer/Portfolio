@@ -249,11 +249,13 @@
 
   .final-cta-links {
     flex-direction: column;
-    .final-cta-links a {
-      width: 100%;
-    }
+  }
+  
+  .final-cta-links a {
+    width: 100%;
+  }
 
-    /* Preserve Dashboard UI in Hero but allow it to stack */
+  /* Preserve Dashboard UI in Hero but allow it to stack */
   .hero-visual {
     order: 1;
     height: auto;
@@ -270,12 +272,13 @@
 
   .dashboard-widgets {
     grid-template-columns: 1fr;
-    height: 320px;
+    height: auto;
     gap: 12px;
   }
 
+  .activity-widget,
   .terminal-widget {
-    height: 120px;
+    height: 140px;
   }
 }
 
@@ -424,10 +427,11 @@
 
   .dashboard-widgets {
     padding: 12px;
-    height: 280px;
+    height: auto;
   }
 
+  .activity-widget,
   .terminal-widget {
-    height: 105px;
+    height: 140px;
   }
 }
