@@ -2199,7 +2199,7 @@ body.dark-mode .border-beam::before {
 .faq-description {
   max-width: 620px;
   
-  font-size: 18px;
+  font-size: 16px;
   
   line-height: 1.9;
   
@@ -2503,8 +2503,6 @@ body.dark-mode .border-beam::before {
 }
 
 .final-cta-links a:hover {
-  transform: translateY(-2px);
-
   border-color:
     rgba(59,130,246,0.16);
 
