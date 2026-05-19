@@ -93,7 +93,7 @@
   .education-content p,
   .faq-description,
   .final-cta-description {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   /* BUTTONS & ACTIONS */
@@ -312,6 +312,7 @@
   .hero-title {
     font-size: 40px;
     letter-spacing: -1.5px;
+    width: 100%;
   }
 
   .about-title,
