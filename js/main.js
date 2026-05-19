@@ -12,28 +12,89 @@ document.addEventListener("DOMContentLoaded", function() {
    MODAL
 ========================= */
 
-const contactBtn = document.querySelector('.contact-btn');
+const contactBtns = document.querySelectorAll('.contact-btn, .open-contact-modal, .final-cta-button');
 const contactModal = document.querySelector('.contact-modal');
 const closeModal = document.querySelector('.close-modal');
+const modalBackdrop = document.querySelector('.modal-backdrop');
+const modalContent = document.querySelector('.modal-content');
 
-if (contactBtn && contactModal && closeModal) {
-  contactBtn.addEventListener('click', () => {
-    contactModal.classList.add('active');
-  });
+function openModal() {
+  if (!contactModal) return;
+  
+  contactModal.classList.add('active');
+  document.body.style.overflow = 'hidden';
 
-  closeModal.addEventListener('click', () => {
-    contactModal.classList.remove('active');
-  });
+  // GSAP Animation
+  gsap.fromTo(modalBackdrop, 
+    { opacity: 0 }, 
+    { opacity: 1, duration: 0.5, ease: 'power2.out' }
+  );
 
-  document.addEventListener('click', (e) => {
-    const modalContent = document.querySelector('.modal-content');
-    if (
-      contactModal.classList.contains('active') &&
-      modalContent &&
-      !modalContent.contains(e.target) &&
-      !contactBtn.contains(e.target)
-    ) {
+  gsap.fromTo(modalContent,
+    { 
+      opacity: 0, 
+      scale: 0.9, 
+      y: 40,
+      filter: 'blur(10px)' 
+    },
+    { 
+      opacity: 1, 
+      scale: 1, 
+      y: 0, 
+      filter: 'blur(0px)',
+      duration: 0.8, 
+      delay: 0.1,
+      ease: 'expo.out' 
+    }
+  );
+
+  // Stagger items
+  gsap.fromTo('.modal-info > *, .input-group, .submit-btn, .modal-glow-1, .modal-glow-2',
+    { opacity: 0, y: 20 },
+    { opacity: 1, y: 0, duration: 0.6, stagger: 0.05, delay: 0.4, ease: 'power3.out' }
+  );
+}
+
+function closeContactModal() {
+  if (!contactModal) return;
+
+  gsap.to(modalContent, {
+    opacity: 0,
+    scale: 0.9,
+    y: 20,
+    filter: 'blur(10px)',
+    duration: 0.4,
+    ease: 'power2.in',
+    onComplete: () => {
       contactModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+
+  gsap.to(modalBackdrop, {
+    opacity: 0,
+    duration: 0.4,
+    ease: 'power2.in'
+  });
+}
+
+if (contactBtns.length > 0 && contactModal && closeModal) {
+  contactBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openModal();
+    });
+  });
+
+  closeModal.addEventListener('click', closeContactModal);
+
+  if (modalBackdrop) {
+    modalBackdrop.addEventListener('click', closeContactModal);
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && contactModal.classList.contains('active')) {
+      closeContactModal();
     }
   });
 }
@@ -257,27 +318,6 @@ faqItems.forEach((item) => {
   
 });
 
-/* =========================
-   FINAL CTA BUTTON
-========================= */
-
-const finalCTAButton =
-  document.querySelector(
-    ".final-cta-button"
-  );
-
-if (finalCTAButton) {
-  
-  finalCTAButton.addEventListener(
-    "click",
-    () => {
-      
-      contactModal.classList.add("active");
-      
-    }
-  );
-  
-}
 
 /* =========================
    GSAP REVEAL ANIMATIONS
