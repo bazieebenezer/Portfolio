@@ -745,7 +745,7 @@ body.dark-mode .close-modal {
 
   height: 46px;
 
-  padding: 0 18px;
+  padding: 8px 18px;
 
   border-radius: var(--radius-sm);
 
@@ -1123,8 +1123,6 @@ body.dark-mode .info-link {
 
 .profile-social-links .social-link {
   flex: 1;
-  justify-content: center;
-  align-items: center;
 }
 
 .social-link:hover {
