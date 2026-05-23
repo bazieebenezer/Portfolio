@@ -68,11 +68,11 @@
       <!-- CENTER -->
       <div class="nav-links">
 
-        <a href="#home">Accueil</a>
-        <a href="#about">À propos</a>
-        <a href="#experience">Expérience</a>
-        <a href="#formation">Formation</a>
-        <a href="#projects">Projets</a>
+        <a href="#home" data-i18n="nav_home">Accueil</a>
+        <a href="#about" data-i18n="nav_about">À propos</a>
+        <a href="#experience" data-i18n="nav_experience">Expérience</a>
+        <a href="#formation" data-i18n="nav_formation">Formation</a>
+        <a href="#projects" data-i18n="nav_projects">Projets</a>
 
       </div>
 
@@ -94,6 +94,7 @@
         <button class="language-btn">
 
           <i data-lucide="languages"></i>
+          <span class="lang-text">FR</span>
   
         </button>
 
@@ -119,11 +120,11 @@
 
     <div class="mobile-menu">
   
-      <a href="#home"><i data-lucide="house"></i><span>Accueil</span></a>
-      <a href="#about"><i data-lucide="square-user"></i><span>À propos</span></a>
-      <a href="#experience"><i data-lucide="briefcase"></i><span>Expérience</span></a>
-      <a href="#formation"><i data-lucide="book-open"></i><span>Formation</span></a>
-      <a href="#projects"><i data-lucide="folder-kanban"></i><span>Projets</span></a>
+      <a href="#home"><i data-lucide="house"></i><span data-i18n="nav_home">Accueil</span></a>
+      <a href="#about"><i data-lucide="square-user"></i><span data-i18n="nav_about">À propos</span></a>
+      <a href="#experience"><i data-lucide="briefcase"></i><span data-i18n="nav_experience">Expérience</span></a>
+      <a href="#formation"><i data-lucide="book-open"></i><span data-i18n="nav_formation">Formation</span></a>
+      <a href="#projects"><i data-lucide="folder-kanban"></i><span data-i18n="nav_projects">Projets</span></a>
   
     </div>
 
@@ -155,19 +156,19 @@
         <!-- LEFT -->
         <div class="hero-content">
 
-          <span class="section-badge">
+          <span class="section-badge" data-i18n="hero_badge">
 
             Développeur Full-Stack
 
           </span>
 
-          <h1 class="hero-title">
+          <h1 class="hero-title" data-i18n="hero_title">
 
             Je conçois des interfaces modernes et minimalistes.
 
           </h1>
 
-          <p class="hero-description">
+          <p class="hero-description" data-i18n="hero_description">
 
             Développeur passionné par les expériences utilisateur
             sobres, rapides et élégantes.
@@ -180,7 +181,7 @@
               
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-presentation-icon lucide-presentation"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></svg>
 
-              Voir les projets
+              <span data-i18n="hero_view_projects">Voir les projets</span>
 
             </button>
 
@@ -188,7 +189,7 @@
               
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-down-icon lucide-file-down"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M12 18v-6"/><path d="m9 15 3 3 3-3"/></svg>
 
-              Télécharger le CV
+              <span data-i18n="hero_download_cv">Télécharger le CV</span>
 
             </button>
 
@@ -217,7 +218,7 @@
               </div>
               <div class="window-tab">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code-2"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
-                <span>main.ts</span>
+                <span data-i18n="dash_tab">main.ts</span>
               </div>
             </div>
 
@@ -238,7 +239,7 @@
               
               <!-- ACTIVITY GRAPH WIDGET -->
               <div class="widget activity-widget">
-                <div class="widget-label">Activité</div>
+                <div class="widget-label" data-i18n="dash_activity">Activité</div>
                 <div class="activity-grid">
                   <div class="activity-dots" id="activity-dots">
                     <span></span>
@@ -695,7 +696,7 @@
               <!-- TERMINAL WIDGET -->
               <div class="widget terminal-widget">
                 <div class="terminal-header">
-                  <div class="terminal-title">Terminal</div>
+                  <div class="terminal-title" data-i18n="dash_terminal">Terminal</div>
                 </div>
                 <div class="terminal-body" id="typing-terminal">
                   <!-- JS will inject terminal lines here -->
@@ -725,16 +726,16 @@
 
       <div class="about-heading">
 
-        <span class="section-badge">
+        <span class="section-badge" data-i18n="about_badge">
           À propos
         </span>
 
         <h2 class="about-title">
 
-          Je développe des expériences
-          numériques
+          <span data-i18n="about_title_main">Je développe des expériences
+          numériques</span>
 
-          <span class="title-muted">
+          <span class="title-muted" data-i18n="about_title_muted">
             modernes, minimalistes
             et pensées pour durer.
           </span>
@@ -748,7 +749,7 @@
 
       <div class="about-content">
 
-        <p class="about-text">
+        <p class="about-text" data-i18n="about_text">
 
           Développeur passionné par les interfaces modernes,
           j’accorde une attention particulière à la simplicité,
@@ -769,18 +770,18 @@
 
           <div class="about-card about-card-large">
 
-            <span class="card-label">
+            <span class="card-label" data-i18n="about_phi_label">
               Philosophie
             </span>
 
-            <h3>
+            <h3 data-i18n="about_phi_title">
 
               Concevoir des interfaces
               simples, rapides et élégantes.
 
             </h3>
 
-            <p>
+            <p data-i18n="about_phi_text">
 
               Je privilégie les expériences
               numériques minimalistes,
@@ -805,7 +806,7 @@
 
           <div class="about-card about-stack-card">
 
-            <span class="card-label">
+            <span class="card-label" data-i18n="about_stack_label">
               Stack
             </span>
 
@@ -854,11 +855,11 @@
 
           <div class="about-card about-mini-card">
 
-            <span class="card-label">
+            <span class="card-label" data-i18n="about_focus_label">
               Focus
             </span>
 
-            <h4>
+            <h4 data-i18n="about_focus_title">
               Architecture web
             </h4>
 
@@ -868,11 +869,11 @@
 
           <div class="about-card about-mini-card">
 
-            <span class="card-label">
+            <span class="card-label" data-i18n="about_vision_label">
               Vision
             </span>
 
-            <h4>
+            <h4 data-i18n="about_vision_title">
              Interfaces intuitives
             </h4>
 
@@ -903,11 +904,11 @@
 
     <div class="experience-header">
 
-      <span class="section-badge">
+      <span class="section-badge" data-i18n="exp_badge">
         Expérience
       </span>
 
-      <h2 class="experience-title">
+      <h2 class="experience-title" data-i18n="exp_title">
 
         Construire des produits numériques
         avec précision et cohérence.
@@ -937,23 +938,23 @@
           <div class="experience-top">
 
             <div>
-              <span class="experience-company">
+              <span class="experience-company" data-i18n="exp_anam_company">
                 Agence Nationale de la Météorologie
               </span>
 
-              <h3>
+              <h3 data-i18n="exp_anam_role">
                 Développeur<br />mobile
               </h3>
 
             </div>
 
-            <span class="experience-status">
+            <span class="experience-status" data-i18n="exp_anam_status">
               Stage
             </span>
 
           </div>
 
-          <p class="experience-description">
+          <p class="experience-description" data-i18n="exp_anam_desc">
 
             Participation au développement
             d’applications mobiles internes
@@ -990,23 +991,23 @@
 
             <div>
 
-              <span class="experience-company">
+              <span class="experience-company" data-i18n="exp_free_company">
                 Freelance
               </span>
 
-              <h3>
+              <h3 data-i18n="exp_free_role">
                 Développeur<br />Full-Stack
               </h3>
 
             </div>
 
-            <span class="experience-status">
+            <span class="experience-status" data-i18n="exp_free_status">
               Actuel
             </span>
 
           </div>
 
-          <p class="experience-description">
+          <p class="experience-description" data-i18n="exp_free_desc">
 
             Conception d’interfaces modernes,
             minimalistes et performantes
@@ -1050,11 +1051,11 @@
 
       <div>
 
-        <span class="section-badge">
+        <span class="section-badge" data-i18n="projects_badge">
           Projets
         </span>
 
-        <h2 class="projects-title">
+        <h2 class="projects-title" data-i18n="projects_title">
           Quelques projets sélectionnés.
         </h2>
 
@@ -1065,7 +1066,7 @@
         <i data-lucide="arrow-up-right"></i>
 
 
-        Démarrer un projet
+        <span data-i18n="projects_cta">Démarrer un projet</span>
 
         
       </a>
@@ -1099,7 +1100,7 @@
 
           <div class="project-top">
 
-            <span class="project-tag">
+            <span class="project-tag" data-i18n="project_aorte_tag">
               Plateforme web
             </span>
 
@@ -1119,7 +1120,7 @@
               Aorte
             </h3>
 
-            <p>
+            <p data-i18n="project_aorte_desc">
 
               Expérience web moderne et immersive
               conçue pour traduire l’identité,
@@ -1150,7 +1151,7 @@
 
           <div class="project-top">
 
-            <span class="project-tag">
+            <span class="project-tag" data-i18n="project_edupulse_tag">
               Application web
             </span>
 
@@ -1168,7 +1169,7 @@
               Edupulse
             </h3>
 
-            <p>
+            <p data-i18n="project_edupulse_desc">
 
               Une plateforme de blogging moderne, ultra-rapide et minimaliste, conçue pour permettre aux étudiants de publier des articles, des fiches de révision et des tutoriels techniques.
 
@@ -1197,7 +1198,7 @@
 
           <div class="project-top">
 
-            <span class="project-tag">
+            <span class="project-tag" data-i18n="project_anam_tag">
               Application multiplateforme
             </span>
 
@@ -1215,7 +1216,7 @@
               Anam App
             </h3>
 
-            <p>
+            <p data-i18n="project_anam_desc">
 
               Dashboard analytique
               moderne orienté données
@@ -1250,11 +1251,11 @@
 
     <div class="education-header">
 
-      <span class="section-badge">
+      <span class="section-badge" data-i18n="edu_badge">
         Formation
       </span>
 
-      <h2 class="education-title">
+      <h2 class="education-title" data-i18n="edu_title">
 
         Un parcours construit
         entre technologie,
@@ -1290,15 +1291,15 @@
 
         <div class="education-content">
 
-          <span class="education-school">
+          <span class="education-school" data-i18n="edu_uts_school">
             Université Thomas Sankara
           </span>
 
-          <h3>
+          <h3 data-i18n="edu_uts_degree">
             Licence en Informatique
           </h3>
 
-          <p>
+          <p data-i18n="edu_uts_desc">
 
             Formation orientée développement, réseau,
             algorithmique, bases de données
@@ -1310,10 +1311,10 @@
 
           <div class="education-tags">
 
-            <span>Programmation</span>
-            <span>Algorithmique</span>
-            <span>Bases de données</span>
-            <span>Réseau</span>
+            <span data-i18n="edu_uts_tag1">Programmation</span>
+            <span data-i18n="edu_uts_tag2">Algorithmique</span>
+            <span data-i18n="edu_uts_tag3">Bases de données</span>
+            <span data-i18n="edu_uts_tag4">Réseau</span>
 
           </div>
 
@@ -1337,15 +1338,15 @@
 
         <div class="education-content">
 
-          <span class="education-school">
+          <span class="education-school" data-i18n="edu_self_school">
             Autoformation
           </span>
 
-          <h3>
+          <h3 data-i18n="edu_self_degree">
             Développement Full-Stack
           </h3>
 
-          <p>
+          <p data-i18n="edu_self_desc">
 
             Apprentissage approfondi
             des interfaces modernes,
@@ -1390,18 +1391,18 @@
 
     <div class="faq-header">
 
-      <span class="section-badge">
+      <span class="section-badge" data-i18n="faq_badge">
         FAQ
       </span>
 
-      <h2 class="faq-title">
+      <h2 class="faq-title" data-i18n="faq_title">
 
         Quelques réponses
         aux questions fréquentes.
 
       </h2>
 
-      <p class="faq-description">
+      <p class="faq-description" data-i18n="faq_desc">
 
         Une vue rapide sur ma manière
         de travailler, collaborer
@@ -1421,7 +1422,7 @@
 
         <button class="faq-question">
 
-          <span>
+          <span data-i18n="faq_q1">
             Quels types de projets réalisez-vous ?
           </span>
 
@@ -1431,7 +1432,7 @@
 
         <div class="faq-answer">
 
-          <p>
+          <p data-i18n="faq_a1">
 
             Je conçois principalement
             des interfaces web modernes,
@@ -1451,7 +1452,7 @@
 
         <button class="faq-question">
 
-          <span>
+          <span data-i18n="faq_q2">
             Travaillez-vous avec des clients internationaux ?
           </span>
 
@@ -1461,7 +1462,7 @@
 
         <div class="faq-answer">
 
-          <p>
+          <p data-i18n="faq_a2">
 
             Oui. Je peux collaborer
             à distance sur des projets
@@ -1480,7 +1481,7 @@
 
         <button class="faq-question">
 
-          <span>
+          <span data-i18n="faq_q3">
             Quelles technologies utilisez-vous ?
           </span>
 
@@ -1490,7 +1491,7 @@
 
         <div class="faq-answer">
 
-          <p>
+          <p data-i18n="faq_a3">
 
             J’utilise principalement
             HTML, CSS, JavaScript,
@@ -1510,7 +1511,7 @@
 
         <button class="faq-question">
 
-          <span>
+          <span data-i18n="faq_q4">
             Pouvez-vous rejoindre une équipe existante ?
           </span>
 
@@ -1520,7 +1521,7 @@
 
         <div class="faq-answer">
 
-          <p>
+          <p data-i18n="faq_a4">
 
             Oui. Je peux intervenir
             aussi bien sur des missions individuelles
@@ -1560,18 +1561,18 @@
 
       <div class="final-cta-content">
 
-        <span class="section-badge">
+        <span class="section-badge" data-i18n="cta_badge">
           Contact
         </span>
 
-        <h2 class="final-cta-title">
+        <h2 class="final-cta-title" data-i18n="cta_title">
 
           Construisons quelque chose
           de remarquable ensemble.
 
         </h2>
 
-        <p class="final-cta-description">
+        <p class="final-cta-description" data-i18n="cta_desc">
 
           Disponible pour des collaborations,
           projets freelance et expériences
@@ -1587,7 +1588,7 @@
             class="final-cta-button open-contact-modal"
           >
 
-            Discuter d’un projet
+            <span data-i18n="cta_btn">Discuter d’un projet</span>
 
             <i data-lucide="arrow-up-right"></i>
 
@@ -1669,18 +1670,18 @@
           <div class="profile-intro">
             <h2 class="profile-name">Bazié Josias</h2>
             <div class="profile-tags">
-              <span class="profile-tag">Full-Stack Engineer</span>
+              <span class="profile-tag" data-i18n="profile_role">Full-Stack Engineer</span>
               <span class="profile-tag">UI Designer</span>
             </div>
-            <p class="profile-quote">"Concevoir des interfaces qui racontent une histoire."</p>
+            <p class="profile-quote" data-i18n="profile_quote">"Concevoir des interfaces qui racontent une histoire."</p>
           </div>
         </div>
 
         <!-- RIGHT: DETAILS & BIO -->
         <div class="profile-details-side">
           <div class="profile-bio-section">
-            <span class="section-label">Bio</span>
-            <p class="profile-bio-text">Passionné par la création d'expériences numériques modernes et performantes. Je combine design minimaliste et architecture solide pour donner vie à vos idées.</p>
+            <span class="section-label" data-i18n="profile_bio_label">Bio</span>
+            <p class="profile-bio-text" data-i18n="profile_bio_text">Passionné par la création d'expériences numériques modernes et performantes. Je combine design minimaliste et architecture solide pour donner vie à vos idées.</p>
           </div>
 
           <div class="profile-info-list">
@@ -1699,12 +1700,12 @@
               </a>
             </div>
             <div class="info-row">
-              <span class="info-label">Localisation</span>
-              <p class="info-value">Abidjan, Côte d'Ivoire</p>
+              <span class="info-label" data-i18n="profile_loc_label">Localisation</span>
+              <p class="info-value" data-i18n="profile_loc_value">Abidjan, Côte d'Ivoire</p>
             </div>
             <div class="info-row">
-              <span class="info-label">Expérience</span>
-              <p class="info-value">8+ ans</p>
+              <span class="info-label" data-i18n="profile_exp_label">Expérience</span>
+              <p class="info-value" data-i18n="profile_exp_value">8+ ans</p>
             </div>
           </div>
 
@@ -1746,10 +1747,10 @@
         <div class="modal-info">
           <div class="modal-info-header">
             <span class="availability-badge">
-              <span class="dot"></span> Disponible pour de nouveaux projets
+              <span class="dot"></span> <span data-i18n="contact_badge">Disponible pour de nouveaux projets</span>
             </span>
-            <h2 class="modal-title">Travaillons <br><span>ensemble.</span></h2>
-            <p class="modal-subtitle">Vous avez une idée ou un projet ? Parlons-en et créons quelque chose d'exceptionnel.</p>
+            <h2 class="modal-title" data-i18n="contact_title">Travaillons <br><span>ensemble.</span></h2>
+            <p class="modal-subtitle" data-i18n="contact_subtitle">Vous avez une idée ou un projet ? Parlons-en et créons quelque chose d'exceptionnel.</p>
           </div>
         </div>
 
@@ -1758,24 +1759,24 @@
           <form class="contact-form">
             <div class="form-grid">
               <div class="input-group">
-                <label>Nom</label>
-                <input type="text" placeholder="Votre nom" required>
+                <label data-i18n="contact_form_name">Nom</label>
+                <input type="text" data-i18n-placeholder="contact_placeholder_name" placeholder="Votre nom" required>
               </div>
               <div class="input-group">
-                <label>Prénom</label>
-                <input type="text" placeholder="Votre prénom" required>
+                <label data-i18n="contact_form_fname">Prénom</label>
+                <input type="text" data-i18n-placeholder="contact_placeholder_fname" placeholder="Votre prénom" required>
               </div>
             </div>
             <div class="input-group">
-              <label>Email</label>
+              <label data-i18n="contact_form_email">Email</label>
               <input type="email" placeholder="votre@email.com" required>
             </div>
             <div class="input-group">
-              <label>Message</label>
-              <textarea placeholder="Comment puis-je vous aider ?" required></textarea>
+              <label data-i18n="contact_form_msg">Message</label>
+              <textarea data-i18n-placeholder="contact_placeholder_msg" placeholder="Comment puis-je vous aider ?" required></textarea>
             </div>
             <button type="submit" class="submit-btn">
-              <span>Envoyer le message</span>
+              <span data-i18n="contact_form_submit">Envoyer le message</span>
               <i data-lucide="send"></i>
             </button>
           </form>

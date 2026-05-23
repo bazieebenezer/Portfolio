@@ -245,37 +245,258 @@ if (menuToggle && mobileMenu) {
 }
 
 /* =========================
+   TRANSLATIONS DATA
+========================= */
+
+const translations = {
+  "fr": {
+    "nav_home": "Accueil",
+    "nav_about": "À propos",
+    "nav_experience": "Expérience",
+    "nav_formation": "Formation",
+    "nav_projects": "Projets",
+    "nav_contact": "Contact",
+    "hero_badge": "Développeur Full-Stack",
+    "hero_title": "Je conçois des interfaces modernes et minimalistes.",
+    "hero_description": "Développeur passionné par les expériences utilisateur sobres, rapides et élégantes.",
+    "hero_view_projects": "Voir les projets",
+    "hero_download_cv": "Télécharger le CV",
+    "about_badge": "À propos",
+    "about_title_main": "Je développe des expériences numériques",
+    "about_title_muted": "modernes, minimalistes et pensées pour durer.",
+    "about_text": "Développeur passionné par les interfaces modernes, j’accorde une attention particulière à la simplicité, aux performances et à l’expérience utilisateur. J’aime concevoir des produits numériques élégants, cohérents et intuitifs en combinant développement frontend et sens du détail.",
+    "about_phi_label": "Philosophie",
+    "about_phi_title": "Concevoir des interfaces simples, rapides et élégantes.",
+    "about_phi_text": "Je privilégie les expériences numériques minimalistes, intuitives et pensées pour durer.",
+    "about_stack_label": "Stack",
+    "about_focus_label": "Focus",
+    "about_focus_title": "Architecture web",
+    "about_vision_label": "Vision",
+    "about_vision_title": "Interfaces intuitives",
+    "exp_badge": "Expérience",
+    "exp_title": "Construire des produits numériques avec précision et cohérence.",
+    "exp_anam_company": "Agence Nationale de la Météorologie",
+    "exp_anam_role": "Développeur mobile",
+    "exp_anam_status": "Stage",
+    "exp_anam_desc": "Participation au développement d’applications mobiles internes orientées collecte et visualisation de données météorologiques.",
+    "exp_free_company": "Freelance",
+    "exp_free_role": "Développeur Full-Stack",
+    "exp_free_status": "Actuel",
+    "exp_free_desc": "Conception d’interfaces modernes, minimalistes et performantes pour des projets web et produits numériques.",
+    "projects_badge": "Projets",
+    "projects_title": "Quelques projets sélectionnés.",
+    "projects_cta": "Démarrer un projet",
+    "project_aorte_tag": "Plateforme web",
+    "project_aorte_desc": "Expérience web moderne et immersive conçue pour traduire l’identité, la vision et les services d’AORTE.",
+    "project_edupulse_tag": "Application web",
+    "project_edupulse_desc": "Une plateforme de blogging moderne, ultra-rapide et minimaliste, conçue pour permettre aux étudiants de publier des articles, des fiches de révision et des tutoriels techniques.",
+    "project_anam_tag": "Application multiplateforme",
+    "project_anam_desc": "Dashboard analytique moderne orienté données météorologiques temps réel.",
+    "edu_badge": "Formation",
+    "edu_title": "Un parcours construit entre technologie, logique et créativité.",
+    "edu_uts_school": "Université Thomas Sankara",
+    "edu_uts_degree": "Licence en Informatique",
+    "edu_uts_desc": "Formation orientée développement, réseau, algorithmique, bases de données et conception de systèmes numériques.",
+    "edu_uts_tag1": "Programmation",
+    "edu_uts_tag2": "Algorithmique",
+    "edu_uts_tag3": "Bases de données",
+    "edu_uts_tag4": "Réseau",
+    "edu_self_school": "Autoformation",
+    "edu_self_degree": "Développement Full-Stack",
+    "edu_self_desc": "Apprentissage approfondi des interfaces modernes, du design système et des expériences web premium.",
+    "faq_badge": "FAQ",
+    "faq_title": "Quelques réponses aux questions fréquentes.",
+    "faq_desc": "Une vue rapide sur ma manière de travailler, collaborer et concevoir des produits numériques.",
+    "faq_q1": "Quels types de projets réalisez-vous ?",
+    "faq_a1": "Je conçois principalement des interfaces web modernes, des dashboards SaaS, des portfolios premium et des expériences UI minimalistes.",
+    "faq_q2": "Travaillez-vous avec des clients internationaux ?",
+    "faq_a2": "Oui. Je peux collaborer à distance sur des projets internationaux en français comme en anglais.",
+    "faq_q3": "Quelles technologies utilisez-vous ?",
+    "faq_a3": "J’utilise principalement HTML, CSS, JavaScript, React, Firebase et des outils modernes orientés UI Engineering.",
+    "faq_q4": "Pouvez-vous rejoindre une équipe existante ?",
+    "faq_a4": "Oui. Je peux intervenir aussi bien sur des missions individuelles qu’en collaboration avec une équipe produit ou technique existante.",
+    "cta_badge": "Contact",
+    "cta_title": "Construisons quelque chose de remarquable ensemble.",
+    "cta_desc": "Disponible pour des collaborations, projets freelance et expériences numériques modernes centrées utilisateur.",
+    "cta_btn": "Discuter d’un projet",
+    "profile_role": "Ingénieur Full-Stack",
+    "profile_quote": "\"Concevoir des interfaces qui racontent une histoire.\"",
+    "profile_bio_label": "Bio",
+    "profile_bio_text": "Passionné par la création d'expériences numériques modernes et performantes. Je combine design minimaliste et architecture solide pour donner vie à vos idées.",
+    "profile_loc_label": "Localisation",
+    "profile_loc_value": "Abidjan, Côte d'Ivoire",
+    "profile_exp_label": "Expérience",
+    "profile_exp_value": "8+ ans",
+    "contact_badge": "Disponible pour de nouveaux projets",
+    "contact_title": "Travaillons ensemble.",
+    "contact_subtitle": "Vous avez une idée ou un projet ? Parlons-en et créons quelque chose d'exceptionnel.",
+    "contact_form_name": "Nom",
+    "contact_form_fname": "Prénom",
+    "contact_form_email": "Email",
+    "contact_form_msg": "Message",
+    "contact_form_submit": "Envoyer le message",
+    "contact_placeholder_name": "Votre nom",
+    "contact_placeholder_fname": "Votre prénom",
+    "contact_placeholder_msg": "Comment puis-je vous aider ?",
+    "dash_activity": "Activité",
+    "dash_terminal": "Terminal",
+    "dash_tab": "main.ts",
+    "dash_code_name": "nom",
+    "dash_code_role": "role",
+    "dash_code_stack": "stack",
+    "dash_code_return": "\"Interfaces modernes\"",
+    "dash_term_1": "npm install success",
+    "dash_term_2": "deploy --now",
+    "dash_term_3": "✔ Projet en ligne"
+  },
+  "en": {
+    "nav_home": "Home",
+    "nav_about": "About",
+    "nav_experience": "Experience",
+    "nav_formation": "Education",
+    "nav_projects": "Projects",
+    "nav_contact": "Contact",
+    "hero_badge": "Full-Stack Developer",
+    "hero_title": "I design modern and minimalist interfaces.",
+    "hero_description": "Developer passionate about clean, fast, and elegant user experiences.",
+    "hero_view_projects": "View projects",
+    "hero_download_cv": "Download CV",
+    "about_badge": "About",
+    "about_title_main": "I develop digital experiences that are",
+    "about_title_muted": "modern, minimalist, and built to last.",
+    "about_text": "Developer passionate about modern interfaces, I pay particular attention to simplicity, performance, and user experience. I love designing elegant, consistent, and intuitive digital products by combining frontend development with an eye for detail.",
+    "about_phi_label": "Philosophy",
+    "about_phi_title": "Designing simple, fast, and elegant interfaces.",
+    "about_phi_text": "I prioritize minimalist, intuitive digital experiences designed to last.",
+    "about_stack_label": "Stack",
+    "about_focus_label": "Focus",
+    "about_focus_title": "Web Architecture",
+    "about_vision_label": "Vision",
+    "about_vision_title": "Intuitive Interfaces",
+    "exp_badge": "Experience",
+    "exp_title": "Building digital products with precision and consistency.",
+    "exp_anam_company": "National Meteorological Agency",
+    "exp_anam_role": "Mobile Developer",
+    "exp_anam_status": "Internship",
+    "exp_anam_desc": "Participated in the development of internal mobile applications focused on meteorological data collection and visualization.",
+    "exp_free_company": "Freelance",
+    "exp_free_role": "Full-Stack Developer",
+    "exp_free_status": "Current",
+    "exp_free_desc": "Designing modern, minimalist, and high-performance interfaces for web projects and digital products.",
+    "projects_badge": "Projects",
+    "projects_title": "A few selected projects.",
+    "projects_cta": "Start a project",
+    "project_aorte_tag": "Web Platform",
+    "project_aorte_desc": "Modern and immersive web experience designed to translate AORTE's identity, vision, and services.",
+    "project_edupulse_tag": "Web Application",
+    "project_edupulse_desc": "A modern, ultra-fast, and minimalist blogging platform designed for students to publish articles, revision sheets, and technical tutorials.",
+    "project_anam_tag": "Multi-platform Application",
+    "project_anam_desc": "Modern analytical dashboard oriented towards real-time meteorological data.",
+    "edu_badge": "Education",
+    "edu_title": "A path built between technology, logic, and creativity.",
+    "edu_uts_school": "Thomas Sankara University",
+    "edu_uts_degree": "Bachelor's in Computer Science",
+    "edu_uts_desc": "Training focused on development, networking, algorithms, databases, and digital system design.",
+    "edu_uts_tag1": "Programming",
+    "edu_uts_tag2": "Algorithms",
+    "edu_uts_tag3": "Databases",
+    "edu_uts_tag4": "Networking",
+    "edu_self_school": "Self-taught",
+    "edu_self_degree": "Full-Stack Development",
+    "edu_self_desc": "In-depth learning of modern interfaces, design systems, and premium web experiences.",
+    "faq_badge": "FAQ",
+    "faq_title": "Some answers to frequently asked questions.",
+    "faq_desc": "A quick look at my way of working, collaborating, and designing digital products.",
+    "faq_q1": "What types of projects do you create?",
+    "faq_a1": "I mainly design modern web interfaces, SaaS dashboards, premium portfolios, and minimalist UI experiences.",
+    "faq_q2": "Do you work with international clients?",
+    "faq_a2": "Yes. I can collaborate remotely on international projects in both French and English.",
+    "faq_q3": "What technologies do you use?",
+    "faq_a3": "I mainly use HTML, CSS, JavaScript, React, Firebase, and modern UI Engineering tools.",
+    "faq_q4": "Can you join an existing team?",
+    "faq_a4": "Yes. I can work on individual missions as well as in collaboration with an existing product or technical team.",
+    "cta_badge": "Contact",
+    "cta_title": "Let's build something remarkable together.",
+    "cta_desc": "Available for collaborations, freelance projects, and modern user-centric digital experiences.",
+    "cta_btn": "Discuss a project",
+    "profile_role": "Full-Stack Engineer",
+    "profile_quote": "\"Designing interfaces that tell a story.\"",
+    "profile_bio_label": "Bio",
+    "profile_bio_text": "Passionate about creating modern and high-performance digital experiences. I combine minimalist design and solid architecture to bring your ideas to life.",
+    "profile_loc_label": "Location",
+    "profile_loc_value": "Abidjan, Ivory Coast",
+    "profile_exp_label": "Experience",
+    "profile_exp_value": "8+ years",
+    "contact_badge": "Available for new projects",
+    "contact_title": "Let's work together.",
+    "contact_subtitle": "Have an idea or a project? Let's talk and create something exceptional.",
+    "contact_form_name": "Last Name",
+    "contact_form_fname": "First Name",
+    "contact_form_email": "Email",
+    "contact_form_msg": "Message",
+    "contact_form_submit": "Send Message",
+    "contact_placeholder_name": "Your last name",
+    "contact_placeholder_fname": "Your first name",
+    "contact_placeholder_msg": "How can I help you ?",
+    "dash_activity": "Activity",
+    "dash_terminal": "Terminal",
+    "dash_tab": "index.ts",
+    "dash_code_name": "name",
+    "dash_code_role": "role",
+    "dash_code_stack": "stack",
+    "dash_code_return": "\"Modern Interfaces\"",
+    "dash_term_1": "npm install success",
+    "dash_term_2": "deploy --now",
+    "dash_term_3": "✔ Project Live"
+  }
+};
+
+/* =========================
    DASHBOARD ANIMATIONS
 ========================= */
 
-const codeContent = [
-  { text: 'class ', type: 'keyword' },
-  { text: 'Developer ', type: 'class' },
-  { text: '{\n', type: 'plain' },
-  { text: '  nom ', type: 'property' },
-  { text: '= ', type: 'plain' },
-  { text: '"Josias Bazié"', type: 'string' },
-  { text: ';\n  role ', type: 'property' },
-  { text: '= ', type: 'plain' },
-  { text: '"Fullstack Engineer"', type: 'string' },
-  { text: ';\n  stack ', type: 'property' },
-  { text: '= ', type: 'plain' },
-  { text: '["Design", "Dev", "UI"]', type: 'string' },
-  { text: ';\n\n  ', type: 'plain' },
-  { text: 'build', type: 'method' },
-  { text: '() {\n    ', type: 'plain' },
-  { text: 'return ', type: 'keyword' },
-  { text: '"Interfaces modernes"', type: 'string' },
-  { text: ';\n  }\n}', type: 'plain' }
-];
+function getCodeContent(lang) {
+  const t = translations[lang] || {};
+  return [
+    { text: 'class ', type: 'keyword' },
+    { text: 'Developer ', type: 'class' },
+    { text: '{\n', type: 'plain' },
+    { text: `  ${t.dash_code_name || 'nom'} `, type: 'property' },
+    { text: '= ', type: 'plain' },
+    { text: '"Josias Bazié"', type: 'string' },
+    { text: `;\n  ${t.dash_code_role || 'role'} `, type: 'property' },
+    { text: '= ', type: 'plain' },
+    { text: '"Fullstack Engineer"', type: 'string' },
+    { text: `;\n  ${t.dash_code_stack || 'stack'} `, type: 'property' },
+    { text: '= ', type: 'plain' },
+    { text: '["Design", "Dev", "UI"]', type: 'string' },
+    { text: ';\n\n  ', type: 'plain' },
+    { text: 'build', type: 'method' },
+    { text: '() {\n    ', type: 'plain' },
+    { text: 'return ', type: 'keyword' },
+    { text: `${t.dash_code_return || '"Interfaces modernes"'}`, type: 'string' },
+    { text: ';\n  }\n}', type: 'plain' }
+  ];
+}
 
-const terminalLines = [
-  { prompt: true, text: 'npm install success' },
-  { prompt: true, text: 'deploy --now' },
-  { prompt: false, text: '✔ Project Live' }
-];
+function getTerminalLines(lang) {
+  const t = translations[lang] || {};
+  return [
+    { prompt: true, text: t.dash_term_1 || 'npm install success' },
+    { prompt: true, text: t.dash_term_2 || 'deploy --now' },
+    { prompt: false, text: t.dash_term_3 || '✔ Project Live' }
+  ];
+}
 
 let lineCount = 0;
+let isTyping = false;
+let typingTimeouts = [];
+
+function clearTyping() {
+  typingTimeouts.forEach(t => clearTimeout(t));
+  typingTimeouts = [];
+  isTyping = false;
+}
 
 function addLineNumber() {
   const lineNumbers = document.getElementById('line-numbers');
@@ -287,22 +508,27 @@ function addLineNumber() {
   lineNumbers.appendChild(span);
 }
 
-async function typeCode(containerId) {
+async function typeCode(containerId, lang) {
   const container = document.getElementById(containerId);
   const lineNumbers = document.getElementById('line-numbers');
   if (!container || !lineNumbers) return;
 
+  clearTyping();
+  isTyping = true;
+  
   container.innerHTML = '';
   lineNumbers.innerHTML = '';
   lineCount = 0;
 
-  addLineNumber(); // First line number starts immediately
+  addLineNumber();
 
   const cursor = document.createElement('span');
   cursor.className = 'cursor';
   container.appendChild(cursor);
 
-  for (const part of codeContent) {
+  const content = getCodeContent(lang);
+
+  for (const part of content) {
     const span = document.createElement('span');
     if (part.type !== 'plain') {
       span.className = `token-${part.type}`;
@@ -310,22 +536,28 @@ async function typeCode(containerId) {
     container.insertBefore(span, cursor);
 
     for (const char of part.text) {
+      if (!isTyping) return;
       span.textContent += char;
       if (char === '\n') {
-        addLineNumber(); // New line number appears ONLY after a \n
+        addLineNumber();
       }
-      await new Promise(r => setTimeout(r, 200));
+      await new Promise(r => {
+        const t = setTimeout(r, 50);
+        typingTimeouts.push(t);
+      });
     }
   }
 }
 
-async function typeTerminal(containerId) {
+async function typeTerminal(containerId, lang) {
   const container = document.getElementById(containerId);
   if (!container) return;
 
   container.innerHTML = '';
+  const lines = getTerminalLines(lang);
 
-  for (const line of terminalLines) {
+  for (const line of lines) {
+    if (!isTyping) return;
     const lineDiv = document.createElement('div');
     lineDiv.className = 'terminal-line';
     
@@ -346,18 +578,24 @@ async function typeTerminal(containerId) {
     container.appendChild(lineDiv);
 
     for (const char of line.text) {
+      if (!isTyping) return;
       textSpan.textContent += char;
-      await new Promise(r => setTimeout(r, 70));
+      await new Promise(r => {
+        const t = setTimeout(r, 30);
+        typingTimeouts.push(t);
+      });
     }
     
     termCursor.remove();
-    await new Promise(r => setTimeout(r, 200));
+    await new Promise(r => {
+      const t = setTimeout(r, 100);
+      typingTimeouts.push(t);
+    });
   }
   
-  // Final persistent cursor on the LAST written line
-  const lines = container.querySelectorAll('.terminal-line');
-  if (lines.length > 0) {
-    const lastLine = lines[lines.length - 1];
+  const finalLines = container.querySelectorAll('.terminal-line');
+  if (finalLines.length > 0) {
+    const lastLine = finalLines[finalLines.length - 1];
     const finalCursor = document.createElement('span');
     finalCursor.className = 'cursor terminal-cursor';
     lastLine.appendChild(finalCursor);
@@ -371,15 +609,9 @@ async function animateDots(containerId) {
   
   for (let i = 0; i < dots.length; i++) {
     dots[i].classList.add('visible');
-    await new Promise(r => setTimeout(r, 15)); 
+    await new Promise(r => setTimeout(r, 10)); 
   }
 }
-
-window.addEventListener('load', () => {
-  typeCode('typing-code');
-  typeTerminal('typing-terminal');
-  animateDots('activity-dots');
-});
 
 /* =========================
    FAQ ACCORDION
@@ -443,9 +675,9 @@ if (typeof gsap !== 'undefined') {
         ease: 'power3.out',
         scrollTrigger: {
           trigger: el,
-          start: 'top 90%', // Déclenchement légèrement plus bas pour plus de fluidité
-          end: 'bottom 10%', // Point de sortie pour le reverse
-          toggleActions: 'play reverse play reverse', // Rejoue l'anim dans les deux sens
+          start: 'top 90%',
+          end: 'bottom 10%',
+          toggleActions: 'play reverse play reverse',
         }
       }
     );
@@ -462,7 +694,6 @@ const scrollContainer = document.querySelector('.scroll-progress-container');
 let scrollTimeout;
 
 window.addEventListener('scroll', () => {
-  // Calculate progress
   const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
   const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   const scrolled = (winScroll / height) * 100;
@@ -471,14 +702,107 @@ window.addEventListener('scroll', () => {
     scrollIndicator.style.width = scrolled + '%';
   }
 
-  // Show indicator
   if (scrollContainer) {
     scrollContainer.classList.add('visible');
-
-    // Hide after 1 second of inactivity
     clearTimeout(scrollTimeout);
     scrollTimeout = setTimeout(() => {
       scrollContainer.classList.remove('visible');
     }, 1000);
   }
 });
+
+
+/* =========================
+   LANGUAGE SWITCHER
+========================= */
+
+const languageBtn = document.querySelector('.language-btn');
+const langText = document.querySelector('.lang-text');
+
+function initLanguage() {
+  console.log("Initializing language system...");
+  const savedLang = localStorage.getItem('language') || 'fr';
+  console.log("Current language:", savedLang);
+  setLanguage(savedLang, false);
+}
+
+function setLanguage(lang, animate = true) {
+  console.log("Setting language to:", lang);
+  localStorage.setItem('language', lang);
+  document.documentElement.setAttribute('lang', lang);
+  
+  if (langText) {
+    langText.textContent = lang.toUpperCase();
+  }
+
+  updateContent(lang);
+  
+  // Restart dashboard animations
+  typeCode('typing-code', lang);
+  typeTerminal('typing-terminal', lang);
+  animateDots('activity-dots');
+
+  // Re-initialize Lucide icons
+  if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
+  }
+}
+
+function updateContent(lang) {
+  const elements = document.querySelectorAll('[data-i18n]');
+  console.log("Found translation elements total:", elements.length);
+  
+  elements.forEach((el, index) => {
+    const key = el.getAttribute('data-i18n');
+    console.log(`Translating element ${index}: key=${key}, tag=${el.tagName}`);
+    if (translations[lang] && translations[lang][key]) {
+      if (el.children.length === 0) {
+        el.textContent = translations[lang][key];
+      } else {
+        let textFound = false;
+        Array.from(el.childNodes).forEach(node => {
+          if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() !== '') {
+            node.textContent = translations[lang][key];
+            textFound = true;
+          }
+        });
+        if (!textFound) {
+            el.innerText = translations[lang][key];
+        }
+      }
+    } else {
+      console.warn("Missing translation for key:", key, "in language:", lang);
+    }
+  });
+
+  const placeholders = document.querySelectorAll('[data-i18n-placeholder]');
+  placeholders.forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (translations[lang] && translations[lang][key]) {
+      el.setAttribute('placeholder', translations[lang][key]);
+    }
+  });
+}
+
+if (languageBtn) {
+  languageBtn.addEventListener('click', () => {
+    const currentLang = localStorage.getItem('language') || 'fr';
+    const newLang = currentLang === 'fr' ? 'en' : 'fr';
+    
+    if (typeof gsap !== 'undefined') {
+      gsap.to('body', {
+        opacity: 0,
+        duration: 0.2,
+        onComplete: () => {
+          setLanguage(newLang);
+          gsap.to('body', { opacity: 1, duration: 0.3 });
+        }
+      });
+    } else {
+      setLanguage(newLang);
+    }
+  });
+}
+
+// Initialize on load
+initLanguage();

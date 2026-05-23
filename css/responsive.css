@@ -392,6 +392,10 @@
     height: 18px;
   }
 
+  .language-btn svg {
+    display: none;
+  }
+
   /* LAYOUT */
   .header {
     padding-top: 8px;

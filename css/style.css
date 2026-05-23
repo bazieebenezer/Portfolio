@@ -324,6 +324,17 @@ h3 {
   height: 18px;
 }
 
+.lang-text {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: var(--color-hover);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+}
+
 .profile-btn {
   height: 42px;
   width: 42px;
