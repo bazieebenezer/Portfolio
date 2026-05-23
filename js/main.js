@@ -101,6 +101,98 @@ if (contactBtns.length > 0 && contactModal && closeModal) {
 
 
 /* =========================
+   PROFILE MODAL
+========================= */
+
+const profileBtns = document.querySelectorAll('.profile-btn, .profile-btn-mobile');
+const profileModal = document.querySelector('.profile-modal');
+const closeProfileModalBtn = document.querySelector('.close-profile-modal');
+const profileModalBackdrop = profileModal ? profileModal.querySelector('.modal-backdrop') : null;
+const profileModalContent = profileModal ? profileModal.querySelector('.modal-content') : null;
+
+function openProfileModal() {
+  if (!profileModal) return;
+  
+  profileModal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+
+  // GSAP Animation
+  gsap.fromTo(profileModalBackdrop, 
+    { opacity: 0 }, 
+    { opacity: 1, duration: 0.5, ease: 'power2.out' }
+  );
+
+  gsap.fromTo(profileModalContent,
+    { 
+      opacity: 0, 
+      scale: 0.9, 
+      y: 40,
+      filter: 'blur(10px)' 
+    },
+    { 
+      opacity: 1, 
+      scale: 1, 
+      y: 0, 
+      filter: 'blur(0px)',
+      duration: 0.8, 
+      delay: 0.1,
+      ease: 'expo.out' 
+    }
+  );
+
+  // Stagger items
+  gsap.fromTo('.profile-card-container > *, .info-item, .social-icon',
+    { opacity: 0, y: 20 },
+    { opacity: 1, y: 0, duration: 0.6, stagger: 0.05, delay: 0.4, ease: 'power3.out' }
+  );
+}
+
+function closeProfileModal() {
+  if (!profileModal) return;
+
+  gsap.to(profileModalContent, {
+    opacity: 0,
+    scale: 0.9,
+    y: 20,
+    filter: 'blur(10px)',
+    duration: 0.4,
+    ease: 'power2.in',
+    onComplete: () => {
+      profileModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+
+  gsap.to(profileModalBackdrop, {
+    opacity: 0,
+    duration: 0.4,
+    ease: 'power2.in'
+  });
+}
+
+if (profileBtns.length > 0 && profileModal && closeProfileModalBtn) {
+  profileBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openProfileModal();
+    });
+  });
+
+  closeProfileModalBtn.addEventListener('click', closeProfileModal);
+
+  if (profileModalBackdrop) {
+    profileModalBackdrop.addEventListener('click', closeProfileModal);
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && profileModal.classList.contains('active')) {
+      closeProfileModal();
+    }
+  });
+}
+
+
+/* =========================
    THEME TOGGLE
 ========================= */
 
@@ -359,3 +451,34 @@ if (typeof gsap !== 'undefined') {
     );
   });
 }
+
+
+/* =========================
+   SCROLL PROGRESS LOGIC
+========================= */
+
+const scrollIndicator = document.getElementById('scrollIndicator');
+const scrollContainer = document.querySelector('.scroll-progress-container');
+let scrollTimeout;
+
+window.addEventListener('scroll', () => {
+  // Calculate progress
+  const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const scrolled = (winScroll / height) * 100;
+  
+  if (scrollIndicator) {
+    scrollIndicator.style.width = scrolled + '%';
+  }
+
+  // Show indicator
+  if (scrollContainer) {
+    scrollContainer.classList.add('visible');
+
+    // Hide after 1 second of inactivity
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+      scrollContainer.classList.remove('visible');
+    }, 1000);
+  }
+});
