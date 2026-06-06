@@ -379,6 +379,7 @@
     width: 100%;
     gap: 12px;
     align-items: start;
+    justify-content: flex-start;
   }
 
   .primary-btn svg,
