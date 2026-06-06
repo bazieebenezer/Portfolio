@@ -676,8 +676,7 @@ if (typeof gsap !== 'undefined') {
         scrollTrigger: {
           trigger: el,
           start: 'top 90%',
-          end: 'bottom 10%',
-          toggleActions: 'play reverse play reverse',
+          once: true,
         }
       }
     );
@@ -801,6 +800,60 @@ if (languageBtn) {
     } else {
       setLanguage(newLang);
     }
+  });
+}
+
+/* =========================
+   CONTACT FORM SUBMISSION (EMAILJS)
+========================= */
+
+const contactForm = document.getElementById('contact-form');
+const submitBtn = contactForm ? contactForm.querySelector('.submit-btn') : null;
+const submitBtnText = submitBtn ? submitBtn.querySelector('span') : null;
+
+if (contactForm && submitBtn) {
+  // Initialisation d'EmailJS avec ta Clé Publique (Public Key)
+  emailjs.init('EDMILDA7f5wlz2Fpd');
+
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Changement d'état du bouton
+    const originalText = submitBtnText.textContent;
+    submitBtn.disabled = true;
+    submitBtnText.textContent = 'Envoi en cours...';
+
+    // Envoi via EmailJS
+    // Service ID: service_rbrb871
+    // Template ID: template_fzunxjc
+    emailjs.sendForm('service_rbrb871', 'template_fzunxjc', this, 'EDMILDA7f5wlz2Fpd')
+      .then(() => {
+        // Succès
+        submitBtnText.textContent = 'Message envoyé !';
+        submitBtn.style.backgroundColor = '#10b981'; // Vert succès
+        
+        // Reset du formulaire
+        contactForm.reset();
+
+        // Retour à l'état normal après 3 secondes
+        setTimeout(() => {
+          submitBtn.disabled = false;
+          submitBtnText.textContent = originalText;
+          submitBtn.style.backgroundColor = '';
+          closeContactModal(); // Ferme la modal automatiquement
+        }, 3000);
+      }, (error) => {
+        // Erreur
+        console.error('Erreur EmailJS:', error);
+        submitBtnText.textContent = 'Erreur...';
+        submitBtn.style.backgroundColor = '#ef4444'; // Rouge erreur
+        
+        setTimeout(() => {
+          submitBtn.disabled = false;
+          submitBtnText.textContent = originalText;
+          submitBtn.style.backgroundColor = '';
+        }, 3000);
+      });
   });
 }
 
