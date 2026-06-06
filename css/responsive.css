@@ -193,8 +193,7 @@
   }
 
   .hero-buttons {
-    /* justify-content: flex-start; */
-    align-items: start;
+    justify-content: center;
     gap: 16px;
   }
 
@@ -379,8 +378,6 @@
     flex-direction: column;
     width: 100%;
     gap: 12px;
-    align-items: start;
-    justify-content: flex-start;
   }
 
   .primary-btn svg,
