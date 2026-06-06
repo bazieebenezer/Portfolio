@@ -2527,11 +2527,11 @@
 
         .hero-content {
             order:2;
-            margin:0 auto
+            margin:0
         }
 
         .hero-buttons {
-            justify-content:center;
+            justify-content:flex-start;
             gap:16px
         }
 
@@ -2680,7 +2680,21 @@
         .hero-buttons {
             flex-direction:column;
             width:100%;
-            gap:12px
+            gap:12px;
+            align-items:flex-start
+        }
+
+        .hero-buttons a:first-child {
+            width:50%
+        }
+
+        .hero-buttons a:nth-child(2) {
+            width:65%
+        }
+
+        .hero-buttons .primary-btn, .hero-buttons .secondary-btn {
+            justify-content:flex-start;
+            padding-left:24px
         }
 
         .primary-btn svg, .secondary-btn svg, .theme-toggle i, .language-btn i, .contact-btn i, .menu-toggle i, .project-arrow i, .final-cta-button i {

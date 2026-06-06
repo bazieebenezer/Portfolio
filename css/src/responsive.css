@@ -72,6 +72,7 @@
 
 
 @media (max-width: 768px) {
+
   /* FONT SIZES */
   .hero-title {
     font-size: 46px;
@@ -193,8 +194,10 @@
   }
 
   .hero-buttons {
-    justify-content: center;
+    align-items: start;
+    /*justify-content: center;*/
     gap: 16px;
+    align-items: start;
   }
 
   /* Sections Spacing */
@@ -269,7 +272,7 @@
     flex-direction: column;
     gap: 12px;
   }
-  
+
   .final-cta-links a {
     width: 100%;
     font-size: 16px;
@@ -308,6 +311,7 @@
 ========================= */
 
 @media (max-width: 480px) {
+
   /* FONT SIZES */
   .hero-title {
     font-size: 40px;
@@ -378,6 +382,7 @@
     flex-direction: column;
     width: 100%;
     gap: 12px;
+    align-items: start;
   }
 
   .primary-btn svg,
