@@ -1006,11 +1006,11 @@ body.dark-mode .profile-main-side {
 
 .profile-name {
   font-family: var(--font-heading);
-  font-size: 48px;
+  font-size: 32px;
   font-weight: 800;
-  letter-spacing: -2px;
+  letter-spacing: -1px;
   line-height: 1;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .profile-tags {
@@ -1021,7 +1021,7 @@ body.dark-mode .profile-main-side {
 }
 
 .profile-tag {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   /*text-transform: uppercase;*/
   /*letter-spacing: -1px;*/
@@ -1061,7 +1061,7 @@ body.dark-mode .profile-main-side {
 }
 
 .profile-bio-text {
-  font-size: 20px;
+  font-size: 16px;
   line-height: 1.6;
   color: var(--color-text);
   font-weight: 500;
@@ -1137,6 +1137,7 @@ body.dark-mode .info-link {
 
 .profile-social-links .social-link {
   flex: 1;
+  font-size: 16px;
 }
 
 .social-link:hover {
@@ -1193,12 +1194,8 @@ body.dark-mode .info-link {
     padding: 16px;
   }
   
-  .profile-name {
-    font-size: 32px;
-  }
-
   .profile-bio-text {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .profile-main-side,
@@ -1217,7 +1214,7 @@ body.dark-mode .info-link {
   }
 
   .profile-quote {
-    font-size: 14px;
+    font-size: 16px;
     max-width: 100%;
   }
 
@@ -1230,7 +1227,7 @@ body.dark-mode .info-link {
   .info-row .info-link {
     width: 100%;
     word-break: break-all;
-    font-size: 14px;
+    font-size: 16px;
     padding: 8px 14px;
   }
 
@@ -1256,10 +1253,6 @@ body.dark-mode .info-link {
     padding: 32px 16px;
   }
 
-  .profile-name {
-    font-size: 26px;
-  }
-
   .profile-avatar-wrapper {
     width: 120px;
     height: 120px;
@@ -1272,7 +1265,7 @@ body.dark-mode .info-link {
   }
 
   .profile-tag {
-    font-size: 11px;
+    font-size: 13px;
     padding: 4px 12px;
   }
 
@@ -1285,7 +1278,7 @@ body.dark-mode .info-link {
   }
 
   .info-row .info-value {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
