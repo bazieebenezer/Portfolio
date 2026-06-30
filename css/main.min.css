@@ -2684,17 +2684,10 @@
             align-items:flex-start
         }
 
-        .hero-buttons a:first-child {
-            width:50%
-        }
-
-        .hero-buttons a:nth-child(2) {
-            width:65%
-        }
-
         .hero-buttons .primary-btn, .hero-buttons .secondary-btn {
             justify-content:flex-start;
-            padding-left:24px
+            padding-left:24px;
+            width:auto
         }
 
         .primary-btn svg, .secondary-btn svg, .theme-toggle i, .language-btn i, .contact-btn i, .menu-toggle i, .project-arrow i, .final-cta-button i {

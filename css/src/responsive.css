@@ -319,6 +319,11 @@
     width: 100%;
   }
 
+  .hero-buttons .primary-btn,
+  .hero-buttons .secondary-btn {
+    width: auto;
+  }
+
   .about-title,
   .experience-title,
   .projects-title,
