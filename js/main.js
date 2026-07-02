@@ -106,7 +106,7 @@ if (contactBtns.length > 0 && contactModal && closeModal) {
 
 const profileBtns = document.querySelectorAll('.profile-btn, .profile-btn-mobile');
 const profileModal = document.querySelector('.profile-modal');
-const closeProfileModalBtn = document.querySelector('.close-profile-modal');
+const closeProfileModalBtn = document.querySelector('.close-modal');
 const profileModalBackdrop = profileModal ? profileModal.querySelector('.modal-backdrop') : null;
 const profileModalContent = profileModal ? profileModal.querySelector('.modal-content') : null;
 

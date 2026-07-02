@@ -548,15 +548,16 @@ body.dark-mode .modal-backdrop {
 
 .modal-content {
   position: relative;
-  width: min(1160px, 100%);
+  width: min(1000px, 100%);
   margin: auto; /* Ensures centering with scroll */
   background: var(--color-surface);
   backdrop-filter: blur(40px);
   -webkit-backdrop-filter: blur(40px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  /*box-shadow: 0 60px 120px -20px rgba(0, 0, 0, 0.4);*/
+  border-radius: var(--radius-sm);
+  overflow-y: auto;
+  max-height: 90vh;
+  box-shadow: 0 0 40px rgba(59, 130, 246, 0.12);
 }
 
 .modal-glows {
@@ -567,87 +568,73 @@ body.dark-mode .modal-backdrop {
   overflow: hidden;
 }
 
-.modal-glow-1,
-.modal-glow-2 {
+.modal-glow-top-right {
   position: absolute;
-  border-radius: 50%;
-  filter: blur(100px);
-  opacity: 0.1;
-  transition: opacity 0.5s ease;
-  width: 420px;
-  height: 420px;
-
-  top: -220px;
-  right: -180px;
-
-  background:
-    radial-gradient(
-      rgba(59,130,246,0.12),
-      transparent 70%
-    );
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
 }
-
-/*body.dark-mode .modal-glow-1,
-body.dark-mode .modal-glow-2 {
-  opacity: 0.15;
-}
-
-.modal-glow-1 {
-  background: var(--color-primary);
-  top: -150px;
-  left: -150px;
-}
-
-.modal-glow-2 {
-  background: var(--color-primary);
-  bottom: -150px;
-  right: -150px;
-}*/
 
 .modal-content .border-beam::before {
-  offset-path: rect(0% 100% 100% 0% round 40px);
   width: 150px;
+  height: 150px;
+  animation-name: beam-walk-lg;
+}
+
+@keyframes beam-walk-lg {
+  0%, 100% { top: -75px; left: -75px; }
+  25% { top: -75px; left: calc(100% - 75px); }
+  50% { top: calc(100% - 75px); left: calc(100% - 75px); }
+  75% { top: calc(100% - 75px); left: -75px; }
 }
 
 .modal-container {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  min-height: 720px;
+  grid-template-columns: 1fr 1.2fr;
 }
 
 .close-modal {
   position: absolute;
-  top: 40px;
-  right: 40px;
-  width: 52px;
-  height: 52px;
+  top: 32px;
+  right: 32px;
+  width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(15, 23, 42, 0.04);
+  background: var(--color-hover);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   color: var(--color-text);
   cursor: pointer;
   z-index: 10;
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s ease;
 }
 
 body.dark-mode .close-modal {
   background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.08);
 }
 
 .close-modal:hover {
+  background: var(--color-surface);
   transform: rotate(90deg);
-  background: var(--color-border);
 }
 
 /* LEFT SIDE: INFO */
 .modal-info {
-  padding: 100px 80px;
-  background: rgba(15, 23, 42, 0.01);
+  padding: 80px 60px;
+  background: rgba(15, 23, 42, 0.02);
   border-right: 1px solid var(--color-border);
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .availability-badge {
@@ -690,10 +677,11 @@ body.dark-mode .close-modal {
 }
 
 .modal-subtitle {
-  font-size: 18px;
+  font-size: 16px;
   color: var(--color-text-secondary);
   line-height: 1.7;
-  max-width: 340px;
+  max-width: 300px;
+  text-align: center;
 }
 
 .modal-contact-details {
@@ -793,7 +781,7 @@ body.dark-mode .close-modal {
 
 /* RIGHT SIDE: FORM */
 .modal-form-side {
-  padding: 100px 120px;
+  padding: 80px 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -882,10 +870,9 @@ body.dark-mode .input-group textarea {
 }
 
 /* RESPONSIVE */
-@media (max-width: 1024px) {
+@media (max-width: 992px) {
   .modal-container {
     grid-template-columns: 1fr;
-    min-height: auto;
   }
   
   .modal-info {
@@ -1144,29 +1131,7 @@ body.dark-mode .info-link {
   color: var(--color-text);
 }
 
-.close-profile-modal {
-  position: absolute;
-  top: 32px;
-  right: 32px;
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--color-hover);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  color: var(--color-text);
-  cursor: pointer;
-  z-index: 10;
-  transition: all 0.3s ease;
-}
 
-.close-profile-modal:hover {
-  background: var(--color-surface);
-  color: var(--color-text);
-  transform: rotate(90deg);
-}
 
 @keyframes morphing {
   0% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
@@ -1231,13 +1196,6 @@ body.dark-mode .info-link {
     padding: 8px 14px;
   }
 
-  .close-profile-modal {
-    top: 16px;
-    right: 16px;
-    width: 40px;
-    height: 40px;
-  }
-
   .profile-modal-content {
     max-height: 85vh;
   }
@@ -1284,11 +1242,11 @@ body.dark-mode .info-link {
 
 @media (max-width: 640px) {
   .contact-modal {
-    padding: 20px;
+    padding: 16px;
   }
   
   .modal-info, .modal-form-side {
-    padding: 40px 24px;
+    padding: 40px 20px;
   }
   
   .modal-title {
@@ -1299,8 +1257,11 @@ body.dark-mode .info-link {
     grid-template-columns: 1fr;
   }
   
-  .detail-link {
-    font-size: 18px;
+  .close-modal {
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
   }
 }
 
@@ -1636,19 +1597,18 @@ body.dark-mode .glow-3 {
 .border-beam::before {
   content: "";
   position: absolute;
-  aspect-ratio: 1;
-  width: 100px; /* Taille un peu plus compacte pour la précision */
+  width: 100px;
+  height: 100px;
   background: radial-gradient(circle at center, var(--color-primary) 0%, transparent 70%);
   filter: blur(4px);
-  offset-path: rect(0% 100% 100% 0% round var(--radius-sm));
-  offset-rotate: 0deg; /* Empêche le pivotement aux angles */
-  animation: beam-move 6s linear infinite;
+  animation: beam-walk 6s linear infinite;
 }
 
-@keyframes beam-move {
-  to {
-    offset-distance: 100%;
-  }
+@keyframes beam-walk {
+  0%, 100% { top: -50px; left: -50px; }
+  25% { top: -50px; left: calc(100% - 50px); }
+  50% { top: calc(100% - 50px); left: calc(100% - 50px); }
+  75% { top: calc(100% - 50px); left: -50px; }
 }
 
 body.dark-mode .border-beam::before {
