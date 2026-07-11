@@ -43,7 +43,14 @@
   project.caseStudy.technologies.forEach(tech => {
     const span = document.createElement('span');
     span.className = 'detail-tech-badge';
-    span.textContent = tech;
+    const icon = techIcons[tech];
+    if (icon) {
+      const img = document.createElement('img');
+      img.src = icon;
+      img.alt = '';
+      span.appendChild(img);
+    }
+    span.appendChild(document.createTextNode(tech));
     techList.appendChild(span);
   });
 

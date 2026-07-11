@@ -183,3 +183,14 @@ const projectsData = [
     }
   }
 ];
+
+const techIcons = {
+  'React': './assets/icons/react.svg',
+  'Next.js': './assets/icons/nextjs.svg',
+  'TypeScript': './assets/icons/typescript.svg',
+  'Node.js': './assets/icons/nodejs.svg',
+  'Angular': './assets/icons/angular.svg',
+  'Ionic': './assets/icons/ionic.svg',
+  'JavaScript': './assets/icons/javascript.svg',
+  'Flutter': './assets/icons/flutter.svg'
+};
