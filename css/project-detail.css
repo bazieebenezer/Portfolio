@@ -1,4 +1,37 @@
 /* =========================
+   DETAIL NAV
+========================= */
+
+.detail-nav-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  transition: color 0.2s ease;
+}
+
+.detail-nav-back:hover {
+  color: var(--color-text);
+}
+
+.detail-nav-current {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-text);
+  opacity: 0.4;
+  letter-spacing: -0.3px;
+}
+
+@media (max-width: 768px) {
+  .detail-nav-back,
+  .detail-nav-current {
+    display: none;
+  }
+}
+
+/* =========================
    DETAIL MAIN
 ========================= */
 
