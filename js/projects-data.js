@@ -192,5 +192,11 @@ const techIcons = {
   'Angular': './assets/icons/angular.svg',
   'Ionic': './assets/icons/ionic.svg',
   'JavaScript': './assets/icons/javascript.svg',
-  'Flutter': './assets/icons/flutter.svg'
+  'Flutter': './assets/icons/flutter.svg',
+  'Tailwind CSS': './assets/icons/tailwindcss.svg',
+  'PostgreSQL': './assets/icons/postgresql.svg',
+  'Figma': './assets/icons/figma.svg',
+  'MongoDB': './assets/icons/mongodb.svg',
+  'Vercel': './assets/icons/vercel-fill.svg',
+  'Chart.js': './assets/icons/chartjs.svg'
 };
