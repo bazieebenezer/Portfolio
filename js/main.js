@@ -14,9 +14,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 const contactBtns = document.querySelectorAll('.contact-btn, .open-contact-modal, .final-cta-button');
 const contactModal = document.querySelector('.contact-modal');
-const closeModal = document.querySelector('.close-modal');
-const modalBackdrop = document.querySelector('.modal-backdrop');
-const modalContent = document.querySelector('.modal-content');
+const closeModal = contactModal ? contactModal.querySelector('.close-modal') : null;
+const modalBackdrop = contactModal ? contactModal.querySelector('.modal-backdrop') : null;
+const modalContent = contactModal ? contactModal.querySelector('.modal-content') : null;
 
 function openModal() {
   if (!contactModal) return;
@@ -34,14 +34,12 @@ function openModal() {
     { 
       opacity: 0, 
       scale: 0.9, 
-      y: 40,
-      filter: 'blur(10px)' 
+      y: 40
     },
     { 
       opacity: 1, 
       scale: 1, 
       y: 0, 
-      filter: 'blur(0px)',
       duration: 0.8, 
       delay: 0.1,
       ease: 'expo.out' 
@@ -49,7 +47,7 @@ function openModal() {
   );
 
   // Stagger items
-  gsap.fromTo('.modal-info > *, .input-group, .submit-btn, .modal-glow-1, .modal-glow-2',
+  gsap.fromTo('.modal-info > *, .input-group, .submit-btn',
     { opacity: 0, y: 20 },
     { opacity: 1, y: 0, duration: 0.6, stagger: 0.05, delay: 0.4, ease: 'power3.out' }
   );
@@ -62,7 +60,6 @@ function closeContactModal() {
     opacity: 0,
     scale: 0.9,
     y: 20,
-    filter: 'blur(10px)',
     duration: 0.4,
     ease: 'power2.in',
     onComplete: () => {
@@ -106,7 +103,7 @@ if (contactBtns.length > 0 && contactModal && closeModal) {
 
 const profileBtns = document.querySelectorAll('.profile-btn, .profile-btn-mobile');
 const profileModal = document.querySelector('.profile-modal');
-const closeProfileModalBtn = document.querySelector('.close-modal');
+const closeProfileModalBtn = profileModal ? profileModal.querySelector('.close-modal') : null;
 const profileModalBackdrop = profileModal ? profileModal.querySelector('.modal-backdrop') : null;
 const profileModalContent = profileModal ? profileModal.querySelector('.modal-content') : null;
 
@@ -126,14 +123,12 @@ function openProfileModal() {
     { 
       opacity: 0, 
       scale: 0.9, 
-      y: 40,
-      filter: 'blur(10px)' 
+      y: 40
     },
     { 
       opacity: 1, 
       scale: 1, 
       y: 0, 
-      filter: 'blur(0px)',
       duration: 0.8, 
       delay: 0.1,
       ease: 'expo.out' 
@@ -154,7 +149,6 @@ function closeProfileModal() {
     opacity: 0,
     scale: 0.9,
     y: 20,
-    filter: 'blur(10px)',
     duration: 0.4,
     ease: 'power2.in',
     onComplete: () => {
