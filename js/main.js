@@ -349,7 +349,17 @@ const translations = {
     "dash_code_return": "\"Interfaces modernes\"",
     "dash_term_1": "npm install success",
     "dash_term_2": "deploy --now",
-    "dash_term_3": "✔ Projet en ligne"
+    "dash_term_3": "✔ Projet en ligne",
+    "detail_role": "Rôle",
+    "detail_duration": "Durée",
+    "detail_visit": "Voir le projet",
+    "detail_overview": "Aperçu",
+    "detail_tech": "Technologies",
+    "detail_features": "Fonctionnalités",
+    "detail_challenges": "Défis",
+    "detail_results": "Résultats",
+    "detail_cta_text": "Intéressé par ce projet ?",
+    "detail_cta_btn": "Me contacter"
   },
   "en": {
     "nav_home": "Home",
@@ -457,7 +467,17 @@ const translations = {
     "dash_code_return": "\"Modern Interfaces\"",
     "dash_term_1": "npm install success",
     "dash_term_2": "deploy --now",
-    "dash_term_3": "✔ Project Live"
+    "dash_term_3": "✔ Project Live",
+    "detail_role": "Role",
+    "detail_duration": "Duration",
+    "detail_visit": "View project",
+    "detail_overview": "Overview",
+    "detail_tech": "Technologies",
+    "detail_features": "Features",
+    "detail_challenges": "Challenges",
+    "detail_results": "Results",
+    "detail_cta_text": "Interested in this project?",
+    "detail_cta_btn": "Contact me"
   }
 };
 
@@ -869,3 +889,20 @@ if (contactForm && submitBtn) {
 
 // Initialize on load
 initLanguage();
+
+/* =========================
+   PROJECT CARD CLICK
+========================= */
+
+document.querySelectorAll('.project-card').forEach(card => {
+  card.addEventListener('click', function(e) {
+    const target = e.target.closest('a');
+    if (target && (target.classList.contains('project-arrow') || target.getAttribute('href'))) {
+      return;
+    }
+    const projectId = this.dataset.project;
+    if (projectId) {
+      window.location.href = `./project-detail.html?id=${projectId}`;
+    }
+  });
+});
