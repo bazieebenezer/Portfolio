@@ -18,16 +18,10 @@
   const navLeft = document.querySelector('.nav-left');
   if (navLeft) {
     navLeft.innerHTML = `
-      <a href="./index.html" class="detail-nav-back">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-        <span data-i18n="nav_home">Accueil</span>
+      <a href="./index.html" class="detail-nav-back" aria-label="Retour au portfolio">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
       </a>
     `;
-  }
-
-  const navLinks = document.querySelector('.nav-links');
-  if (navLinks) {
-    navLinks.innerHTML = `<span class="detail-nav-current">${project.title}</span>`;
   }
   document.getElementById('detail-image').src = project.image;
   document.getElementById('detail-image').alt = project.title;
