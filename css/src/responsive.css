@@ -1,7 +1,3 @@
-/* =========================
-   LAPTOP & TABLET (Large)
-========================= */
-
 @media (max-width: 1024px) {
   .hero-title {
     font-size: 48px;
@@ -11,19 +7,17 @@
     gap: 32px;
   }
 
-  /* Preserve Dashboard UI */
   .dashboard-window {
-    width: 300px;
+    width: 100%;
+    max-width: 440px;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-
-/* =========================
-   TABLET (Small)
-========================= */
-
 @media (max-width: 992px) {
-
   .about-container {
     grid-template-columns: 1fr;
   }
@@ -44,7 +38,7 @@
 
   .experience-item {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 16px;
   }
 
   .experience-date {
@@ -58,7 +52,7 @@
 
   .education-item {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 16px;
   }
 
   .education-line {
@@ -66,14 +60,11 @@
   }
 
   .final-cta-container {
-    padding: 80px 48px;
+    padding: 64px 40px;
   }
 }
 
-
 @media (max-width: 768px) {
-
-  /* FONT SIZES */
   .hero-title {
     font-size: 46px;
   }
@@ -97,15 +88,14 @@
     font-size: 16px;
   }
 
-  /* BUTTONS & ACTIONS */
   .primary-btn,
   .secondary-btn,
   .submit-btn,
   .contact-btn,
   .final-cta-button {
-    height: 54px;
-    padding: 0 24px;
-    font-size: 16px;
+    height: 48px;
+    padding: 0 22px;
+    font-size: 15px;
   }
 
   .final-cta-button {
@@ -117,33 +107,20 @@
   .contact-btn,
   .menu-toggle,
   .project-arrow {
-    height: 46px;
-    padding: 12px;
+    height: 42px;
+    padding: 10px;
   }
 
   .project-arrow {
-    width: 46px;
+    width: 42px;
   }
 
-  .theme-toggle i,
-  .language-btn i,
-  .contact-btn i,
-  .menu-toggle i,
-  .project-arrow i,
-  .final-cta-button i,
-  .primary-btn svg,
-  .secondary-btn svg {
-    width: 20px;
-    height: 20px;
-  }
-
-  /* LAYOUT */
   .header {
     padding-top: 12px;
   }
 
   .navbar {
-    height: 72px;
+    height: 64px;
     padding: 0 16px;
     width: 92%;
   }
@@ -163,18 +140,13 @@
   }
 
   .mobile-menu {
-    top: 90px;
-    padding: 24px;
+    top: 86px;
+    padding: 20px;
   }
 
   .mobile-menu a {
-    padding: 16px 20px;
-    font-size: 18px;
-  }
-
-  .mobile-menu a i {
-    width: 28px;
-    height: 28px;
+    padding: 14px 18px;
+    font-size: 17px;
   }
 
   .hero {
@@ -185,7 +157,6 @@
   .hero-container {
     grid-template-columns: 1fr;
     gap: 40px;
-    text-align: left;
   }
 
   .hero-content {
@@ -195,12 +166,9 @@
 
   .hero-buttons {
     align-items: start;
-    /*justify-content: center;*/
     gap: 16px;
-    align-items: start;
   }
 
-  /* Sections Spacing */
   .about-section,
   .experience-section,
   .projects-section,
@@ -211,11 +179,11 @@
   }
 
   .about-card {
-    padding: 28px;
+    padding: 24px;
   }
 
   .experience-card {
-    padding: 28px;
+    padding: 24px;
   }
 
   .experience-card h3 {
@@ -225,25 +193,25 @@
   .stack-tags span,
   .experience-stack span,
   .education-tags span {
-    height: 40px;
-    padding: 0 16px;
-    font-size: 14px;
-  }
-
-  .stack-tags img {
-    width: 16px;
-    height: 16px;
+    height: 36px;
+    padding: 0 14px;
+    font-size: 13px;
   }
 
   .education-header,
   .experience-header,
   .projects-header,
   .faq-header {
-    margin-bottom: 48px;
+    margin-bottom: 40px;
+  }
+
+  .projects-header {
+    flex-direction: column;
+    align-items: start;
   }
 
   .education-content {
-    padding: 28px;
+    padding: 24px;
   }
 
   .education-content h3 {
@@ -251,7 +219,7 @@
   }
 
   .faq-question {
-    padding: 24px;
+    padding: 20px 24px;
   }
 
   .faq-question span {
@@ -259,13 +227,13 @@
   }
 
   .faq-answer p {
-    padding: 0 24px 24px 24px;
+    padding: 0 24px 20px 24px;
     font-size: 16px;
   }
 
   .final-cta-container {
-    padding: 56px var(--space-lg);
-    border-radius: var(--radius-lg);
+    padding: 48px 24px;
+    border-radius: var(--radius-md);
   }
 
   .final-cta-links {
@@ -275,14 +243,13 @@
 
   .final-cta-links a {
     width: 100%;
-    font-size: 16px;
+    font-size: 15px;
   }
 
-  /* Preserve Dashboard UI in Hero but allow it to stack */
   .hero-visual {
     order: 1;
     height: auto;
-    min-height: 300px;
+    min-height: auto;
     width: 100%;
     overflow: hidden;
   }
@@ -295,33 +262,38 @@
 
   .dashboard-widgets {
     grid-template-columns: 1fr;
-    height: auto;
     gap: 12px;
   }
 
-  .activity-widget,
-  .terminal-widget {
-    height: 140px;
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-text h3 {
+    font-size: 26px;
+  }
+
+  .projects-section {
+    padding: 100px 0;
+  }
+
+  .education-section {
+    padding: 100px 0;
+  }
+
+  .faq-section {
+    padding: 100px 0;
+  }
+
+  .final-cta-section {
+    padding: 100px 0 80px;
   }
 }
 
-
-/* =========================
-   MOBILE
-========================= */
-
 @media (max-width: 480px) {
-
-  /* FONT SIZES */
   .hero-title {
-    font-size: 40px;
+    font-size: 38px;
     letter-spacing: -1.5px;
-    width: 100%;
-  }
-
-  .hero-buttons .primary-btn,
-  .hero-buttons .secondary-btn {
-    width: auto;
   }
 
   .about-title,
@@ -330,57 +302,30 @@
   .education-title,
   .faq-title,
   .final-cta-title {
-    font-size: 38px;
+    font-size: 36px;
     letter-spacing: -1.5px;
   }
 
   .section-badge {
-    height: 34px;
-    padding: 0 14px;
-    font-size: 14px;
+    height: 30px;
+    padding: 0 12px;
+    font-size: 13px;
   }
 
   .hero-description {
-    font-size: 18px;
+    font-size: 17px;
     margin-bottom: 24px;
   }
 
-  .stack-tags span,
-  .experience-stack span,
-  .education-tags span {
-    height: 38px;
-    padding: 0 14px;
-    font-size: 14px;
-  }
-
-  .stack-tags img {
-    width: 16px;
-    height: 16px;
-  }
-
-  /* BUTTONS & ICONS */
   .primary-btn,
   .secondary-btn,
   .submit-btn,
   .contact-btn,
   .final-cta-button {
-    height: 52px;
+    height: 48px;
     padding: 0 20px;
-    font-size: 15px;
+    font-size: 14px;
     width: 100%;
-  }
-
-  .theme-toggle,
-  .language-btn,
-  .contact-btn,
-  .menu-toggle,
-  .project-arrow {
-    height: 44px;
-    padding: 10px;
-  }
-
-  .project-arrow {
-    width: 44px;
   }
 
   .hero-buttons {
@@ -390,31 +335,13 @@
     align-items: start;
   }
 
-  .primary-btn svg,
-  .secondary-btn svg,
-  .theme-toggle i,
-  .language-btn i,
-  .contact-btn i,
-  .menu-toggle i,
-  .project-arrow i,
-  .final-cta-button i {
-    width: 18px;
-    height: 18px;
-  }
-
-  .language-btn svg {
-    display: none;
-  }
-
-  /* LAYOUT */
   .header {
     padding-top: 8px;
   }
 
   .navbar {
-    height: 64px;
+    height: 60px;
     padding: 0 12px;
-    border-radius: 12px;
     width: 94%;
   }
 
@@ -426,39 +353,12 @@
     gap: 6px;
   }
 
-  .mobile-menu {
-    top: 80px;
-    padding: 20px;
-  }
-
-  .mobile-menu a {
-    padding: 14px 18px;
-    font-size: 16px;
-  }
-
-  .mobile-menu a i {
-    width: 24px;
-    height: 24px;
-  }
-
   .hero {
     padding-top: 100px;
   }
 
-  /* Preserve Dashboard UI */
-  .hero-visual {
-    width: 100%;
-    min-height: auto;
-    overflow-x: hidden;
-  }
-
-  .dashboard-window {
-    width: 100%;
-    max-width: 100%;
-  }
-
   .window-content {
-    height: 240px;
+    height: 220px;
     padding: 12px;
   }
 
@@ -467,21 +367,8 @@
     gap: 8px;
   }
 
-  .terminal-body {
-    font-size: 12px;
-  }
-
-  .line-numbers {
-    min-width: 15px;
-  }
-
   .dashboard-widgets {
     padding: 12px;
-    height: auto;
-  }
-
-  .activity-widget,
-  .terminal-widget {
-    height: 140px;
+    gap: 10px;
   }
 }

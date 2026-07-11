@@ -181,6 +181,67 @@ const projectsData = [
         }
       ]
     }
+  },
+  {
+    id: 'quoteforge',
+    title: 'QuoteForge',
+    tag: { fr: 'Application web', en: 'Web Application' },
+    description: {
+      fr: 'Générateur de devis professionnel permettant de créer, personnaliser et gérer des devis en ligne avec une interface moderne et intuitive.',
+      en: 'Professional quote generator for creating, customizing and managing online quotes with a modern and intuitive interface.'
+    },
+    image: './assets/images/quoteforge.png',
+    liveUrl: 'https://quoteforges.vercel.app',
+    caseStudy: {
+      overview: {
+        fr: 'QuoteForge est un générateur de devis en ligne conçu pour simplifier la création et la gestion de documents professionnels. L\'application offre une expérience fluide pour générer des devis personnalisés, avec un design moderne et des fonctionnalités de gestion avancées.',
+        en: 'QuoteForge is an online quote generator designed to simplify the creation and management of professional documents. The application offers a smooth experience for generating customized quotes, with a modern design and advanced management features.'
+      },
+      role: { fr: 'Développeur Full-Stack', en: 'Full-Stack Developer' },
+      duration: { fr: '4 semaines', en: '4 weeks' },
+      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'MongoDB', 'Vercel'],
+      features: [
+        {
+          title: { fr: 'Génération Rapide', en: 'Quick Generation' },
+          desc: {
+            fr: 'Créez des devis professionnels en quelques clics grâce à un formulaire intuitif et des modèles prédéfinis.',
+            en: 'Create professional quotes in just a few clicks with an intuitive form and predefined templates.'
+          }
+        },
+        {
+          title: { fr: 'Personnalisation Totale', en: 'Full Customization' },
+          desc: {
+            fr: 'Personnalisez chaque aspect de vos devis : logo, couleurs, mentions légales et conditions générales.',
+            en: 'Customize every aspect of your quotes: logo, colors, legal notices, and terms and conditions.'
+          }
+        },
+        {
+          title: { fr: 'Gestion des Clients', en: 'Client Management' },
+          desc: {
+            fr: 'Base de données clients intégrée pour un suivi efficace et une facturation récurrente simplifiée.',
+            en: 'Integrated client database for effective tracking and simplified recurring billing.'
+          }
+        }
+      ],
+      challenges: [
+        {
+          title: { fr: 'Génération de PDF', en: 'PDF Generation' },
+          desc: {
+            fr: 'Implémenter un système de génération de PDF fiable tout en préservant la mise en page et la qualité d\'impression.',
+            en: 'Implementing a reliable PDF generation system while preserving layout and print quality.'
+          }
+        }
+      ],
+      results: [
+        {
+          title: { fr: 'Efficacité', en: 'Efficiency' },
+          desc: {
+            fr: 'Réduction significative du temps de création de devis avec une interface utilisateur optimisée.',
+            en: 'Significant reduction in quote creation time with an optimized user interface.'
+          }
+        }
+      ]
+    }
   }
 ];
 
