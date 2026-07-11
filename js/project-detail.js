@@ -23,6 +23,11 @@
       </a>
     `;
   }
+
+  const navLinks = document.querySelector('.nav-links');
+  if (navLinks) {
+    navLinks.style.display = 'none';
+  }
   document.getElementById('detail-image').src = project.image;
   document.getElementById('detail-image').alt = project.title;
   document.getElementById('detail-tag').textContent = project.tag[lang];
