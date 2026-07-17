@@ -192,11 +192,20 @@ if (profileBtns.length > 0 && profileModal && closeProfileModalBtn) {
 
 const themeToggle = document.querySelector('.theme-toggle');
 
+function updateThemeIcon() {
+  const isDarkMode = document.body.classList.contains('dark-mode');
+  themeToggle.innerHTML = `<i data-lucide="${isDarkMode ? 'moon' : 'sun'}"></i>`;
+  if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
+  }
+}
+
 if (themeToggle) {
   themeToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
     const isDarkMode = document.body.classList.contains('dark-mode');
     localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+    updateThemeIcon();
   });
 }
 
@@ -205,6 +214,7 @@ window.addEventListener('DOMContentLoaded', () => {
   if (savedTheme === 'dark') {
     document.body.classList.add('dark-mode');
   }
+  updateThemeIcon();
 });
 
 
@@ -769,6 +779,10 @@ function setLanguage(lang, animate = true) {
   }
 
   updateContent(lang);
+
+  if (typeof window.updateProjectDetail === 'function') {
+    window.updateProjectDetail(lang);
+  }
   
   // Restart dashboard animations
   typeCode('typing-code', lang);
