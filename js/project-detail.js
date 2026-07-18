@@ -12,7 +12,7 @@
     return;
   }
 
-  document.title = `${project.title} - Bazié Josias`;
+  const BASE_URL = 'https://simplixp.vercel.app';
 
   const navLeft = document.querySelector('.nav-left');
   if (navLeft) {
@@ -28,7 +28,39 @@
     navLinks.style.display = 'none';
   }
 
+  function updateMetaTags(lang, p) {
+    const title = `${p.title} - Bazié Josias`;
+    const desc = p.description[lang];
+
+    document.title = title;
+
+    setMeta('description', desc);
+    setMeta('og:title', title);
+    setMeta('og:description', desc);
+    setMeta('og:url', `${BASE_URL}/project-detail.html?id=${p.id}`);
+    setMeta('og:image', `${BASE_URL}${p.image}`);
+    setMeta('twitter:title', title);
+    setMeta('twitter:description', desc);
+    setMeta('twitter:url', `${BASE_URL}/project-detail.html?id=${p.id}`);
+    setMeta('twitter:image', `${BASE_URL}${p.image}`);
+
+    const canon = document.querySelector('link[rel="canonical"]');
+    if (canon) canon.href = `${BASE_URL}/project-detail.html?id=${p.id}`;
+  }
+
+  function setMeta(name, value) {
+    let el = document.querySelector(`meta[name="${name}"], meta[property="${name}"]`);
+    if (!el) {
+      el = document.createElement('meta');
+      if (name.startsWith('og:')) el.setAttribute('property', name);
+      else el.setAttribute('name', name);
+      document.head.appendChild(el);
+    }
+    el.setAttribute('content', value);
+  }
+
   function renderProjectContent(lang) {
+    updateMetaTags(lang, project);
     document.getElementById('detail-image').src = project.image;
     document.getElementById('detail-image').alt = project.title;
     document.getElementById('detail-tag').textContent = project.tag[lang];

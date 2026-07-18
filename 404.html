@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page non trouvée | Bazié Josias</title>
+    <meta name="description" content="Page non trouvée - Portfolio de Bazié Josias, Développeur Full-Stack.">
+    <link rel="canonical" href="https://simplixp.vercel.app/404.html">
+    <meta name="theme-color" content="#0b1120">
+    <meta name="robots" content="noindex, follow">
+
+    <link rel="icon" type="image/svg+xml" href="./assets/images/logo.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/logo.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.min.css">
+</head>
+<body style="overflow-x: hidden;">
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scrollIndicator"></div>
+    </div>
+
+    <main>
+        <div class="container" style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 120px 24px;">
+            <h1 style="font-size: clamp(80px, 15vw, 140px); font-weight: 900; line-height: 1; letter-spacing: -6px; margin: 0; background: linear-gradient(135deg, var(--color-primary), #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">404</h1>
+            <p style="font-size: clamp(18px, 3vw, 24px); color: var(--color-text-secondary); margin: 16px 0 8px; font-weight: 600;">Page introuvable</p>
+            <p style="color: var(--color-text-secondary); margin-bottom: 40px; max-width: 400px;">La page que vous cherchez n'existe pas ou a été déplacée.</p>
+            <a href="./index.html" class="primary-btn" style="display: inline-flex; text-decoration: none;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                Retour au portfolio
+            </a>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script>
+        if (document.getElementById('scrollIndicator')) {
+            document.getElementById('scrollIndicator').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
